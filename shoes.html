@@ -214,6 +214,17 @@ function rankClass(rank) {
   return '';
 }
 
+const COL = {
+  id:0, brand:1, model:2, year:3, race:4, gender:5, rank:6,
+  drop_mm:7, weight_g:8, carbon:9, type:10, who_ran:11,
+  affiliate_url:12, pronation:13, support:14, cushioning:15, responsiveness:16
+};
+
+function cell(r, i) {
+  return r.c[i] && r.c[i].v !== null && r.c[i].v !== undefined
+    ? String(r.c[i].v).trim() : '';
+}
+
 async function fetchShoes() {
   try {
     const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`;
@@ -221,19 +232,31 @@ async function fetchShoes() {
     const text = await res.text();
     const json = JSON.parse(text.substring(47).slice(0,-2));
     const rows = json.table.rows;
-    const cols = json.table.cols.map(c => c.label.toLowerCase().trim());
 
-    allShoes = rows.map(r => {
-      const obj = {};
-      cols.forEach((col, i) => {
-        obj[col] = r.c[i] ? (r.c[i].v !== null ? String(r.c[i].v).trim() : '') : '';
-      });
-      return obj;
-    }).filter(s => s.brand || s.model);
+    allShoes = rows.map(r => ({
+      id:            cell(r, COL.id),
+      brand:         cell(r, COL.brand),
+      model:         cell(r, COL.model),
+      year:          cell(r, COL.year),
+      race:          cell(r, COL.race),
+      gender:        cell(r, COL.gender),
+      rank:          cell(r, COL.rank),
+      drop_mm:       cell(r, COL.drop_mm),
+      weight_g:      cell(r, COL.weight_g),
+      carbon:        cell(r, COL.carbon),
+      type:          cell(r, COL.type),
+      who_ran:       cell(r, COL.who_ran),
+      affiliate_url: cell(r, COL.affiliate_url),
+      pronation:     cell(r, COL.pronation),
+      support:       cell(r, COL.support),
+      cushioning:    cell(r, COL.cushioning),
+      responsiveness:cell(r, COL.responsiveness),
+    })).filter(s => s.brand || s.model);
 
     populateBrands();
     renderCards(allShoes);
   } catch(e) {
+    console.error('fetchShoes error:', e);
     document.getElementById('shoesGrid').innerHTML = '<div class="empty">Could not load data. Check that the Google Sheet is publicly accessible.</div>';
   }
 }
