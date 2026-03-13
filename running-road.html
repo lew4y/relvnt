@@ -295,6 +295,7 @@ async function fetchShoes() {
       support:       cell(r, COL.support),
       cushioning:    cell(r, COL.cushioning),
       responsiveness:cell(r, COL.responsiveness),
+      image_url:     cell(r, COL.image_url),
     })).filter(s => s.brand || s.model);
 
     populateBrands();
