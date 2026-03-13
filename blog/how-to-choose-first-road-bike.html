@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230a0a0a'/><text x='50' y='72' font-family='Arial Black,sans-serif' font-size='52' font-weight='900' fill='%23c8f542' text-anchor='middle' letter-spacing='-6'>RLV</text></svg>">
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Relvnt  -  Gear That Wins</title>
+<title>How to Choose Your First Road Bike (Beginner Guide) — Relvnt</title>
 <meta name="description" content="New to road cycling? Learn how to choose your first road bike, from frame type and sizing to components, budget, and test rides.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -14,24 +13,13 @@
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;transition:background .3s,color .3s;line-height:1.7}
 a{color:inherit;text-decoration:none}
 nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:1.4rem 4rem}
-.logo{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:-.06em;color:var(--text)}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:.1em;color:var(--text)}
 [data-theme="dark"] .logo{color:var(--accent)}
 .nav-links{display:flex;gap:2.5rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .nav-links a:hover{color:var(--text);transition:color .15s}
 .theme-btn{background:none;border:0.5px solid var(--border);border-radius:20px;padding:.28rem .85rem;font-size:.72rem;color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.05em}
 .theme-btn:hover{color:var(--text)}
-.page-outer{max-width:1060px;margin:0 auto;padding:4rem 2rem 6rem;display:grid;grid-template-columns:1fr 200px;gap:5rem;align-items:start}
-.article-wrap{min-width:0}
-.sidebar{position:sticky;top:90px}
-.sidebar-label{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:1rem}
-.sidebar-posts{display:flex;flex-direction:column;gap:0}
-.sidebar-post{display:block;padding:.7rem 0;border-top:0.5px solid var(--border);cursor:pointer}
-.sidebar-post:last-child{border-bottom:0.5px solid var(--border)}
-.sidebar-post-cat{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:.25rem}
-.sidebar-post-title{font-size:.78rem;color:var(--muted);line-height:1.4}
-.sidebar-post:hover .sidebar-post-title{color:var(--text)}
-.sidebar-post.active .sidebar-post-title{color:var(--text);font-weight:500}
-.sidebar-post.active{pointer-events:none}
+.article-wrap{max-width:720px;margin:0 auto;padding:4rem 2rem 6rem}
 .back{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:inline-flex;align-items:center;gap:.4rem;margin-bottom:2.5rem}
 .back:hover{color:var(--text)}
 .article-meta{display:flex;gap:1rem;align-items:center;margin-bottom:1.5rem}
@@ -55,58 +43,30 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
 .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.1em;color:var(--text)}
 [data-theme="dark"] .footer-logo{color:var(--accent)}
 .footer-note{font-size:.67rem;color:var(--faint)}
-@media(max-width:800px){nav,footer{padding:1rem 1.5rem}.nav-links{display:none}.page-outer{grid-template-columns:1fr;gap:3rem;padding:2.5rem 1.5rem 4rem}.sidebar{position:static}}
-</style>
-<style>
-.nav-item{position:relative}
-.nav-item>a,.nav-item>span{color:var(--muted);text-decoration:none;padding:.4rem 1.2rem .7rem;display:flex;align-items:center;gap:.35rem;cursor:pointer;white-space:nowrap}
-.nav-item>a:hover,.nav-item>span:hover{color:var(--text)}
-.nav-item>span svg,.nav-item>a svg{width:9px;height:9px;min-width:9px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;transition:transform .15s;display:inline-block}
-.nav-item:hover>span svg{transform:rotate(180deg)}
-.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--card);border:0.5px solid var(--border);border-radius:6px;min-width:160px;padding:.4rem 0;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-[data-theme="dark"] .dropdown{box-shadow:0 8px 24px rgba(0,0,0,.4)}
-.nav-item:hover .dropdown{display:block}
-.dropdown a{display:block;padding:.5rem 1.1rem;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;white-space:nowrap}
-.dropdown a:hover{color:var(--text);background:var(--bg)}
-.dropdown-section{padding:.3rem 0;border-top:0.5px solid var(--border);margin-top:.3rem}
-.dropdown-section:first-child{border-top:none;margin-top:0}
-.dropdown-label{padding:.4rem 1.1rem .2rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
-.nav-blog{color:var(--muted);text-decoration:none;padding:.4rem 1.2rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
-.nav-blog:hover{color:var(--text)}
+@media(max-width:800px){nav,footer{padding:1rem 1.5rem}.nav-links{display:none}.article-wrap{padding:2.5rem 1.5rem 4rem}}
+
+.page-outer{display:grid;grid-template-columns:1fr 260px;gap:5rem;padding:4rem 4rem 6rem;max-width:1200px;margin:0 auto}
+.sidebar{position:sticky;top:90px}
+.sidebar-label{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:1rem}
+.sidebar-posts{display:flex;flex-direction:column;gap:0}
+.sidebar-post{display:block;padding:.7rem 0;border-top:0.5px solid var(--border);cursor:pointer;text-decoration:none;color:inherit}
+.sidebar-post:last-child{border-bottom:0.5px solid var(--border)}
+.sidebar-post-cat{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:.25rem}
+.sidebar-post-title{font-size:.78rem;color:var(--muted);line-height:1.4}
+.sidebar-post:hover .sidebar-post-title{color:var(--text)}
+.sidebar-post.active .sidebar-post-title{color:var(--text);font-weight:500}
+.sidebar-post.active{pointer-events:none}
+@media(max-width:900px){.page-outer{grid-template-columns:1fr;gap:2rem;padding:2.5rem 1.5rem 4rem}.sidebar{position:static}}
 </style>
 </head>
 <body>
 <nav>
-  <a class="logo" href="index.html">RELVNT</a>
+  <a href="../index.html" class="logo">RELVNT</a>
   <div class="nav-links">
-
-    <div class="nav-item">
-      <span>Sports<svg viewBox="0 0 10 6" style="width:9px;height:9px;min-width:9px;flex-shrink:0"><polyline points="1,1 5,5 9,1"/></svg></span>
-      <div class="dropdown">
-        <div class="dropdown-section">
-          <div class="dropdown-label">Running</div>
-          <a href="running-road.html">Road Shoes</a>
-          <a href="running-trail.html">Trail Shoes</a>
-          <a href="running-nonpro.html">Non-Professional</a>
-        </div>
-        <div class="dropdown-section">
-          <div class="dropdown-label">Cycling</div>
-          <a href="coming-soon.html">Bikes</a>
-          <a href="coming-soon.html">Shoes</a>
-          <a href="coming-soon.html">Helmets</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="nav-item">
-      <span>Accessories<svg viewBox="0 0 10 6" style="width:9px;height:9px;min-width:9px;flex-shrink:0"><polyline points="1,1 5,5 9,1"/></svg></span>
-      <div class="dropdown">
-        <a href="coming-soon.html">Watches</a>
-        <a href="coming-soon.html">HR Monitoring</a>
-      </div>
-    </div>
-
-    <a class="nav-blog" href="blog.html">Blog</a>
+    <a href="../running-road.html">Running</a>
+    <a href="#">Cycling</a>
+    <a href="#">Watches</a>
+    <a href="#">Blog</a>
   </div>
   <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">Dark mode</button>
 </nav>
@@ -120,11 +80,11 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
     <span class="article-date">March 2026</span>
   </div>
 
-  <h1>How to Choose Your First Road Bike - A Complete Beginner Guide</h1>
+  <h1>How to Choose Your First Road Bike – A Complete Beginner Guide</h1>
 
   <p class="article-intro">Buying your first road bike is exciting, but it can also be overwhelming. There are so many frame types, components, and buzzwords that it's easy to get stuck and not buy anything at all. This guide walks you through the key decisions step by step, so you can pick a bike that fits your body, your riding style, and your budget.</p>
 
-  <h2>Step 1 - Decide how you'll actually use the bike</h2>
+  <h2>Step 1 – Decide how you'll actually use the bike</h2>
   <p>Before diving into specs, get clear on how you'll ride:</p>
   <ul>
     <li><strong>Fitness and weekend rides:</strong> short to medium rides, mostly for general fitness.</li>
@@ -136,7 +96,7 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
 
   <div class="rule"></div>
 
-  <h2>Step 2 - Set a realistic budget (and include extras)</h2>
+  <h2>Step 2 – Set a realistic budget (and include extras)</h2>
   <p>It's easy to forget that the bike itself is only part of the total cost.</p>
   <ul>
     <li><strong>Entry level:</strong> alloy frame, basic groupset, mechanical disc or rim brakes. Perfectly fine for most beginners.</li>
@@ -158,10 +118,10 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
 
   <div class="rule"></div>
 
-  <h2>Step 3 - Get the right frame size</h2>
+  <h2>Step 3 – Get the right frame size</h2>
   <p>Frame size is one of the most important decisions you'll make. A correctly sized bike will be more comfortable, help you avoid pain in your back, neck, and knees, and allow you to ride longer without feeling cramped.</p>
   <ul>
-    <li>Check the sizing chart for each brand  -  a "Medium" in one brand may not equal a "Medium" in another.</li>
+    <li>Check the sizing chart for each brand — a "Medium" in one brand may not equal a "Medium" in another.</li>
     <li>Use your height and inseam as a starting point, then fine-tune at a local bike shop.</li>
     <li>On a correctly sized bike, you should have a slight bend in your knee at the bottom of the pedal stroke.</li>
     <li>You should be able to reach the handlebars without locking your elbows or hunching your shoulders.</li>
@@ -170,7 +130,7 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
 
   <div class="rule"></div>
 
-  <h2>Step 4 - Choose frame material and geometry</h2>
+  <h2>Step 4 – Choose frame material and geometry</h2>
 
   <h3>Frame material</h3>
   <ul>
@@ -189,7 +149,7 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
 
   <div class="rule"></div>
 
-  <h2>Step 5 - Brakes, gears, and wheels</h2>
+  <h2>Step 5 – Brakes, gears, and wheels</h2>
 
   <h3>Brakes</h3>
   <ul>
@@ -201,13 +161,13 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
   <p>Look for beginner-friendly gearing, especially if you have climbs nearby:</p>
   <ul>
     <li>Compact or sub-compact cranksets (e.g., 50/34 or 48/32) make hills easier.</li>
-    <li>A wide-range cassette (e.g., 11-30 or 11-34) gives you more low gears to spin up climbs.</li>
-    <li>Don't get hung up on exact gear counts  -  how <em>easy</em> the lowest gear is matters more than "2x11 vs 2x12".</li>
+    <li>A wide-range cassette (e.g., 11–30 or 11–34) gives you more low gears to spin up climbs.</li>
+    <li>Don't get hung up on exact gear counts — how <em>easy</em> the lowest gear is matters more than "2x11 vs 2x12".</li>
   </ul>
 
   <div class="rule"></div>
 
-  <h2>Step 6 - Test ride: what to pay attention to</h2>
+  <h2>Step 6 – Test ride: what to pay attention to</h2>
   <p>If you can, always test ride before buying. Ask yourself:</p>
   <ul>
     <li>Does the bike feel stable and predictable when riding straight and turning?</li>
@@ -215,7 +175,7 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
     <li>Do the brakes feel confident and controllable?</li>
     <li>On a small hill, do you have gears you can comfortably spin, or are you grinding?</li>
   </ul>
-  <p>A bike that feels good in the first 10-15 minutes will usually feel even better once it's properly adjusted for you.</p>
+  <p>A bike that feels good in the first 10–15 minutes will usually feel even better once it's properly adjusted for you.</p>
 
   <div class="rule"></div>
 
@@ -242,29 +202,24 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
 
   <div class="cta-block">
     <div class="cta-title">What do the pros actually race on?</div>
-    <p>Curious about the bikes winning the Tour de France, Giro, and Ironman? We're building a database of podium-verified race bikes  -  coming soon to Relvnt.</p>
+    <p>Curious about the bikes winning the Tour de France, Giro, and Ironman? We're building a database of podium-verified race bikes — coming soon to Relvnt.</p>
     <p>→ <a href="../index.html">Back to Relvnt</a></p>
   </div>
 </div>
 
-<aside class="sidebar">
-  <div class="sidebar-label">More articles</div>
-  <div class="sidebar-posts">
-    <a href="best-running-shoes-beginners-2026.html" class="sidebar-post">
-      <div class="sidebar-post-cat">Running · Guide</div>
-      <div class="sidebar-post-title">Best Running Shoes for Beginners in 2026</div>
-    </a>
-    <a href="how-to-choose-first-road-bike.html" class="sidebar-post active">
-      <div class="sidebar-post-cat">Cycling · Guide</div>
-      <div class="sidebar-post-title">How to Choose Your First Road Bike</div>
-    </a>
-    <a href="gps-running-watches-2026.html" class="sidebar-post">
-      <div class="sidebar-post-cat">Watches · Guide</div>
-      <div class="sidebar-post-title">GPS Running Watches in 2026</div>
-    </a>
-  </div>
-</aside>
-
+</div>
+<div class="sidebar">
+<div class="sidebar-label">More articles</div>
+<div class="sidebar-posts">
+  <a class="sidebar-post" href="when-to-replace-running-shoes.html"><div class="sidebar-post-cat">Running</div><div class="sidebar-post-title">How Often Should You Replace Running Shoes?</div></a>
+  <a class="sidebar-post" href="best-running-shoes-beginners-2026.html"><div class="sidebar-post-cat">Running</div><div class="sidebar-post-title">Best Running Shoes for Beginners 2026</div></a>
+  <a class="sidebar-post" href="5k-running-plan-gps-watch.html"><div class="sidebar-post-cat">Running</div><div class="sidebar-post-title">Beginner's 5K Plan with a GPS Watch</div></a>
+  <a class="sidebar-post active" href="how-to-choose-first-road-bike.html"><div class="sidebar-post-cat">Cycling</div><div class="sidebar-post-title">How to Choose Your First Road Bike</div></a>
+  <a class="sidebar-post" href="road-bike-size-guide.html"><div class="sidebar-post-cat">Cycling</div><div class="sidebar-post-title">Road Bike Size Guide</div></a>
+  <a class="sidebar-post" href="road-vs-gravel-vs-hybrid-bikes.html"><div class="sidebar-post-cat">Cycling</div><div class="sidebar-post-title">Road vs Gravel vs Hybrid Bikes</div></a>
+  <a class="sidebar-post" href="gps-running-watches-2026.html"><div class="sidebar-post-cat">Watches</div><div class="sidebar-post-title">GPS Running Watches: Which Features Actually Matter?</div></a>
+</div>
+</div>
 </div>
 <footer>
   <div class="footer-logo">RELVNT.CC</div>
