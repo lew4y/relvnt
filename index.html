@@ -91,9 +91,36 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
 <body>
 
 <nav>
-  <div class="logo">RELVNT</div>
+  <a class="logo" href="index.html">RELVNT</a>
   <div class="nav-links">
-    <a href="shoes.html">Running</a><a href="#">Cycling</a><a href="#">Watches</a><a href="blog.html">Blog</a>
+
+    <div class="nav-item">
+      <span>Sports<svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"/></svg></span>
+      <div class="dropdown">
+        <div class="dropdown-section">
+          <div class="dropdown-label">Running</div>
+          <a href="running-road.html">Road Shoes</a>
+          <a href="running-trail.html">Trail Shoes</a>
+          <a href="running-nonpro.html">Non-Professional</a>
+        </div>
+        <div class="dropdown-section">
+          <div class="dropdown-label">Cycling</div>
+          <a href="coming-soon.html">Bikes</a>
+          <a href="coming-soon.html">Shoes</a>
+          <a href="coming-soon.html">Helmets</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <span>Accessories<svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"/></svg></span>
+      <div class="dropdown">
+        <a href="coming-soon.html">Watches</a>
+        <a href="coming-soon.html">HR Monitoring</a>
+      </div>
+    </div>
+
+    <a class="nav-blog" href="blog.html">Blog</a>
   </div>
   <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">Dark mode</button>
 </nav>
