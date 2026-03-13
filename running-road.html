@@ -48,7 +48,8 @@ select:hover{border-color:var(--text)}
 [data-theme="light"] .shoe-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.05)}
 .shoe-card:hover{transform:translateY(-2px)}
 .shoe-card-top{display:flex;align-items:center;justify-content:space-between}
-.shoe-avatar{width:44px;height:44px;border-radius:8px;background:var(--bg);border:0.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.05em;color:var(--muted);flex-shrink:0}
+.shoe-avatar{width:44px;height:44px;border-radius:8px;background:var(--bg);border:0.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.05em;color:var(--muted);flex-shrink:0;overflow:hidden}
+.shoe-avatar img{width:100%;height:100%;object-fit:contain;padding:4px}
 .shoe-rank{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1;color:var(--faint)}
 .shoe-rank.gold{color:#c8a84b}
 .shoe-rank.silver{color:#a0a0a0}
@@ -258,7 +259,8 @@ function rankClass(rank) {
 const COL = {
   id:0, brand:1, model:2, year:3, race:4, gender:5, rank:6,
   drop_mm:7, weight_g:8, carbon:9, type:10, who_ran:11,
-  affiliate_url:12, pronation:13, support:14, cushioning:15, responsiveness:16
+  affiliate_url:12, pronation:13, support:14, cushioning:15, responsiveness:16,
+  image_url:17
 };
 
 function cell(r, i) {
@@ -359,6 +361,9 @@ function renderCards(shoes) {
 
   grid.innerHTML = shoes.map(s => {
     const initials  = getInitials(s.brand, s.model);
+    const avatarInner = s.image_url
+      ? `<img src="${s.image_url}" alt="${s.model}" onerror="this.parentElement.innerHTML='${initials}'">`
+      : initials;
     const drop      = s.drop_mm  ? `${s.drop_mm}mm` : ' - ';
     const weight    = s.weight_g ? `${s.weight_g}g`  : ' - ';
     const rank      = s.rank || ' - ';
@@ -376,7 +381,7 @@ function renderCards(shoes) {
     return `
     <div class="shoe-card">
       <div class="shoe-card-top">
-        <div class="shoe-avatar">${initials}</div>
+        <div class="shoe-avatar">${avatarInner}</div>
         <div class="shoe-rank ${rc}">#${rank}</div>
       </div>
       <div>
