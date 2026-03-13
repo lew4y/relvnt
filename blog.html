@@ -56,12 +56,36 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
 <body>
 
 <nav>
-  <a href="index.html" class="logo">RELVNT</a>
+  <a class="logo" href="index.html">RELVNT</a>
   <div class="nav-links">
-    <a href="shoes.html">Running</a>
-    <a href="#">Cycling</a>
-    <a href="#">Watches</a>
-    <a href="blog.html" class="active">Blog</a>
+
+    <div class="nav-item">
+      <span>Sports<svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"/></svg></span>
+      <div class="dropdown">
+        <div class="dropdown-section">
+          <div class="dropdown-label">Running</div>
+          <a href="running-road.html">Road Shoes</a>
+          <a href="running-trail.html">Trail Shoes</a>
+          <a href="running-nonpro.html">Non-Professional</a>
+        </div>
+        <div class="dropdown-section">
+          <div class="dropdown-label">Cycling</div>
+          <a href="coming-soon.html">Bikes</a>
+          <a href="coming-soon.html">Shoes</a>
+          <a href="coming-soon.html">Helmets</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <span>Accessories<svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"/></svg></span>
+      <div class="dropdown">
+        <a href="coming-soon.html">Watches</a>
+        <a href="coming-soon.html">HR Monitoring</a>
+      </div>
+    </div>
+
+    <a class="nav-blog" href="blog.html">Blog</a>
   </div>
   <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">Dark mode</button>
 </nav>
@@ -75,21 +99,49 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
 <div class="posts-wrap">
   <div class="posts-grid">
 
-    <div class="post" onclick="location.href='blog/best-running-shoes-beginners-2026.html'">
+    <div class="post" onclick="location.href='when-to-replace-running-shoes.html'">
+      <div class="post-cat">Running · Guide</div>
+      <div class="post-title">HOW OFTEN SHOULD YOU REPLACE YOUR RUNNING SHOES?</div>
+      <div class="post-body">Keep a pair too long and injuries follow. Learn the key signs it's time for a new pair and how many kilometers to expect.</div>
+      <div class="post-date">March 2026</div>
+    </div>
+
+    <div class="post" onclick="location.href='best-running-shoes-beginners-2026.html'">
       <div class="post-cat">Running · Guide</div>
       <div class="post-title">BEST RUNNING SHOES FOR BEGINNERS IN 2026</div>
       <div class="post-body">New to running? Learn how to choose the right pair — fit, cushioning, support, and common mistakes to avoid.</div>
       <div class="post-date">March 2026</div>
     </div>
 
-    <div class="post" onclick="location.href='blog/how-to-choose-first-road-bike.html'">
+    <div class="post" onclick="location.href='5k-running-plan-gps-watch.html'">
+      <div class="post-cat">Running · Training</div>
+      <div class="post-title">BEGINNER'S 5K RUNNING PLAN WITH A GPS WATCH</div>
+      <div class="post-body">From run-walk intervals to race day — a 4–8 week plan built around your GPS watch.</div>
+      <div class="post-date">March 2026</div>
+    </div>
+
+    <div class="post" onclick="location.href='how-to-choose-first-road-bike.html'">
       <div class="post-cat">Cycling · Guide</div>
       <div class="post-title">HOW TO CHOOSE YOUR FIRST ROAD BIKE</div>
       <div class="post-body">From frame type and sizing to components, budget, and test rides — a complete beginner guide.</div>
       <div class="post-date">March 2026</div>
     </div>
 
-    <div class="post" onclick="location.href='blog/gps-running-watches-2026.html'">
+    <div class="post" onclick="location.href='road-bike-size-guide.html'">
+      <div class="post-cat">Cycling · Guide</div>
+      <div class="post-title">ROAD BIKE SIZE GUIDE: FIND THE RIGHT FRAME IN 5 STEPS</div>
+      <div class="post-body">Not sure what size you need? Two body measurements and five steps are all it takes to find the right fit.</div>
+      <div class="post-date">March 2026</div>
+    </div>
+
+    <div class="post" onclick="location.href='road-vs-gravel-vs-hybrid-bikes.html'">
+      <div class="post-cat">Cycling · Guide</div>
+      <div class="post-title">ROAD VS GRAVEL VS HYBRID BIKES: WHICH IS RIGHT FOR YOU?</div>
+      <div class="post-body">Same two wheels, very different bikes. Here's how to choose the right type for your riding and budget.</div>
+      <div class="post-date">March 2026</div>
+    </div>
+
+    <div class="post" onclick="location.href='gps-running-watches-2026.html'">
       <div class="post-cat">Watches · Guide</div>
       <div class="post-title">GPS RUNNING WATCHES IN 2026 – WHICH FEATURES ACTUALLY MATTER?</div>
       <div class="post-body">Overwhelmed by specs? Here's what actually matters when picking a GPS watch for your running.</div>
