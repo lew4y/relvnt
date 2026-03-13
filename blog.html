@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Relvnt</title>
+<meta name="description" content="Gear guides, race analysis and buying advice from the podiums of the world's biggest endurance races.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f7f5f2;--card:#ffffff;--border:rgba(0,0,0,0.08);--text:#0a0a0a;--muted:#888884;--faint:#c4c2bc;--accent:#c8f542;--nav-bg:rgba(247,245,242,0.95)}
+[data-theme="dark"]{--bg:#0c0c0c;--card:#151515;--border:rgba(255,255,255,0.07);--text:#f0ede8;--muted:#a8a69f;--faint:#888580;--nav-bg:rgba(12,12,12,0.95)}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;transition:background .3s,color .3s}
+a{color:inherit;text-decoration:none}
+
+nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:1.4rem 4rem}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:.1em;color:var(--text)}
+[data-theme="dark"] .logo{color:var(--accent)}
+.nav-links{display:flex;gap:2.5rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.nav-links a:hover{color:var(--text);transition:color .15s}
+.nav-links a.active{color:var(--text)}
+.theme-btn{background:none;border:0.5px solid var(--border);border-radius:20px;padding:.28rem .85rem;font-size:.72rem;color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.05em}
+.theme-btn:hover{color:var(--text)}
+
+.page-header{padding:4rem 4rem 3rem;border-bottom:0.5px solid var(--border)}
+.back{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1.5rem}
+.back:hover{color:var(--text)}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,6vw,5rem);line-height:.95;letter-spacing:.02em;margin-bottom:.8rem}
+.page-sub{font-size:.88rem;color:var(--muted);line-height:1.7}
+
+.posts-wrap{padding:3rem 4rem 6rem}
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+
+.post{background:var(--card);border:0.5px solid var(--border);border-radius:6px;padding:1.8rem;cursor:pointer;transition:transform .15s;display:flex;flex-direction:column}
+.post:hover{transform:translateY(-2px)}
+[data-theme="light"] .post:hover{box-shadow:0 8px 28px rgba(0,0,0,.05)}
+.post-cat{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--faint);margin-bottom:.7rem}
+.post-title{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;line-height:1.1;letter-spacing:.02em;margin-bottom:.7rem;color:var(--text)}
+.post-body{font-size:.8rem;color:var(--muted);line-height:1.75;flex:1}
+.post-date{font-size:.62rem;color:var(--faint);margin-top:1.2rem}
+
+footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.1em;color:var(--text)}
+[data-theme="dark"] .footer-logo{color:var(--accent)}
+.footer-note{font-size:.67rem;color:var(--faint)}
+
+@media(max-width:800px){
+  nav,footer{padding:1rem 1.5rem}.nav-links{display:none}
+  .page-header{padding:2.5rem 1.5rem 2rem}
+  .posts-wrap{padding:2rem 1.5rem 4rem}
+  .posts-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">RELVNT</a>
+  <div class="nav-links">
+    <a href="shoes.html">Running</a>
+    <a href="#">Cycling</a>
+    <a href="#">Watches</a>
+    <a href="blog.html" class="active">Blog</a>
+  </div>
+  <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">Dark mode</button>
+</nav>
+
+<div class="page-header">
+  <a href="index.html" class="back">← Back to home</a>
+  <h1 class="page-title">FROM THE<br>BLOG</h1>
+  <p class="page-sub">Gear guides, race analysis and buying advice — all rooted in podium data.</p>
+</div>
+
+<div class="posts-wrap">
+  <div class="posts-grid">
+
+    <div class="post" onclick="location.href='blog/best-running-shoes-beginners-2026.html'">
+      <div class="post-cat">Running · Guide</div>
+      <div class="post-title">BEST RUNNING SHOES FOR BEGINNERS IN 2026</div>
+      <div class="post-body">New to running? Learn how to choose the right pair — fit, cushioning, support, and common mistakes to avoid.</div>
+      <div class="post-date">March 2026</div>
+    </div>
+
+    <div class="post" onclick="location.href='blog/how-to-choose-first-road-bike.html'">
+      <div class="post-cat">Cycling · Guide</div>
+      <div class="post-title">HOW TO CHOOSE YOUR FIRST ROAD BIKE</div>
+      <div class="post-body">From frame type and sizing to components, budget, and test rides — a complete beginner guide.</div>
+      <div class="post-date">March 2026</div>
+    </div>
+
+    <div class="post" onclick="location.href='blog/gps-running-watches-2026.html'">
+      <div class="post-cat">Watches · Guide</div>
+      <div class="post-title">GPS RUNNING WATCHES IN 2026 – WHICH FEATURES ACTUALLY MATTER?</div>
+      <div class="post-body">Overwhelmed by specs? Here's what actually matters when picking a GPS watch for your running.</div>
+      <div class="post-date">March 2026</div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">RELVNT.CC</div>
+  <div class="footer-note">Data sourced from race results · Affiliate links may earn commission</div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const html=document.documentElement;
+  const dark=html.getAttribute('data-theme')==='dark';
+  html.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('themeBtn').textContent=dark?'Dark mode':'Light mode';
+  localStorage.setItem('relvnt-theme',dark?'light':'dark');
+}
+const t=localStorage.getItem('relvnt-theme');
+if(t){document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.getElementById('themeBtn').textContent='Light mode';}
+</script>
+</body>
+</html>
