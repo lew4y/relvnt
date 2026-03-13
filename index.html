@@ -87,6 +87,23 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
   .posts{grid-template-columns:1fr;gap:1.2rem}
 }
 </style>
+<style>
+.nav-item{position:relative}
+.nav-item>a,.nav-item>span{color:var(--muted);text-decoration:none;padding:.4rem 1.2rem .7rem;display:flex;align-items:center;gap:.35rem;cursor:pointer;white-space:nowrap}
+.nav-item>a:hover,.nav-item>span:hover{color:var(--text)}
+.nav-item>span svg,.nav-item>a svg{width:9px;height:9px;min-width:9px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;transition:transform .15s;display:inline-block}
+.nav-item:hover>span svg{transform:rotate(180deg)}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--card);border:0.5px solid var(--border);border-radius:6px;min-width:160px;padding:.4rem 0;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+[data-theme="dark"] .dropdown{box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.nav-item:hover .dropdown{display:block}
+.dropdown a{display:block;padding:.5rem 1.1rem;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;white-space:nowrap}
+.dropdown a:hover{color:var(--text);background:var(--bg)}
+.dropdown-section{padding:.3rem 0;border-top:0.5px solid var(--border);margin-top:.3rem}
+.dropdown-section:first-child{border-top:none;margin-top:0}
+.dropdown-label{padding:.4rem 1.1rem .2rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.nav-blog{color:var(--muted);text-decoration:none;padding:.4rem 1.2rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+.nav-blog:hover{color:var(--text)}
+</style>
 </head>
 <body>
 
