@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230a0a0a'/><text x='50' y='72' font-family='Arial Black,sans-serif' font-size='52' font-weight='900' fill='%23c8f542' text-anchor='middle' letter-spacing='-6'>RLV</text></svg>">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relvnt - Gear That Wins</title>
+<meta name="description" content="Running gear tracked from the world's biggest race podiums. Road shoes, trail shoes, and more.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f7f5f2;--card:#ffffff;--border:rgba(0,0,0,0.08);--text:#0a0a0a;--muted:#888884;--faint:#c4c2bc;--accent:#c8f542;--nav-bg:rgba(247,245,242,0.95)}
+[data-theme="dark"]{--bg:#0c0c0c;--card:#151515;--border:rgba(255,255,255,0.07);--text:#f0ede8;--muted:#a8a69f;--faint:#888580;--nav-bg:rgba(12,12,12,0.95)}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;transition:background .3s,color .3s}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:1.4rem 4rem}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:-.06em;color:var(--text);text-decoration:none}
+[data-theme="dark"] .logo{color:var(--accent)}
+.nav-links{display:flex;gap:0;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);align-items:center}
+.nav-item{position:relative}
+.nav-item>a,.nav-item>span{color:var(--muted);text-decoration:none;padding:.4rem 1.2rem .7rem;display:flex;align-items:center;gap:.35rem;cursor:pointer;white-space:nowrap}
+.nav-item>a:hover,.nav-item>span:hover{color:var(--text)}
+.nav-item>span svg,.nav-item>a svg{width:9px;height:9px;min-width:9px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;transition:transform .15s;display:inline-block}
+.nav-item:hover>span svg{transform:rotate(180deg)}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--card);border:0.5px solid var(--border);border-radius:6px;min-width:160px;padding:.4rem 0;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+[data-theme="dark"] .dropdown{box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.nav-item:hover .dropdown{display:block}
+.dropdown a{display:block;padding:.5rem 1.1rem;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;white-space:nowrap}
+.dropdown a:hover{color:var(--text);background:var(--bg)}
+.dropdown-section{padding:.3rem 0;border-top:0.5px solid var(--border);margin-top:.3rem}
+.dropdown-section:first-child{border-top:none;margin-top:0}
+.dropdown-label{padding:.4rem 1.1rem .2rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.nav-blog{color:var(--muted);text-decoration:none;padding:.4rem 1.2rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+.nav-blog:hover{color:var(--text)}
+.theme-btn{background:none;border:0.5px solid var(--border);border-radius:20px;padding:.28rem .85rem;font-size:.72rem;color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.05em;margin-left:1.5rem}
+.theme-btn:hover{color:var(--text)}
+
+.page-hero{padding:5rem 4rem 4rem;border-bottom:0.5px solid var(--border)}
+.page-kicker{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin-bottom:1.2rem}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,5.5rem);line-height:.95;letter-spacing:.01em;margin-bottom:1.2rem}
+.page-title mark{background:var(--accent);color:#0a0a0a;padding:0 .08em;font-style:normal}
+.page-sub{font-size:.92rem;color:var(--muted);line-height:1.9;max-width:520px}
+
+.section-label{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:1.5rem}
+.cats{padding:4rem 4rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.cat{background:var(--card);border:0.5px solid var(--border);border-radius:6px;padding:1.8rem 1.8rem 1.5rem;cursor:pointer;transition:transform .18s;position:relative;display:flex;flex-direction:column;gap:.9rem}
+.cat:hover{transform:translateY(-2px)}
+[data-theme="light"] .cat:hover{box-shadow:0 8px 28px rgba(0,0,0,.05)}
+.cat-top{display:flex;align-items:flex-start;justify-content:space-between}
+.cat-icon{width:44px;height:44px;background:var(--bg);border:0.5px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cat-icon svg{width:22px;height:22px;stroke:var(--text);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.cat-status{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding:.18rem .5rem;border-radius:2px}
+.live{background:var(--accent);color:#0a0a0a}
+.soon{background:var(--faint);color:var(--muted)}
+[data-theme="dark"] .soon{background:#222220;color:var(--muted)}
+.cat-name{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.03em;line-height:1;color:var(--text)}
+.cat-desc{font-size:.8rem;color:var(--muted);line-height:1.75}
+.cat-races{display:flex;flex-direction:column;gap:.3rem}
+.cat-race{font-size:.67rem;letter-spacing:.04em;color:var(--faint);display:flex;align-items:center;gap:.5rem}
+.cat-race::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.cat-link{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.2rem}
+.cat:hover .cat-link{color:var(--text)}
+
+footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.1em;color:var(--text)}
+[data-theme="dark"] .footer-logo{color:var(--accent)}
+.footer-note{font-size:.67rem;color:var(--faint)}
+@media(max-width:800px){nav,footer{padding:1rem 1.5rem}.nav-links{display:none}.page-hero{padding:3rem 1.5rem 2.5rem}.cats{grid-template-columns:1fr;padding:2.5rem 1.5rem;gap:1.2rem}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">RELVNT</a>
+  <div class="nav-links">
+    <div class="nav-item">
+      <span>Sports<svg viewBox="0 0 10 6" style="width:9px;height:9px;min-width:9px;flex-shrink:0"><polyline points="1,1 5,5 9,1"/></svg></span>
+      <div class="dropdown">
+        <div class="dropdown-section">
+          <div class="dropdown-label">Running</div>
+          <a href="running-road.html">Road Shoes</a>
+          <a href="running-trail.html">Trail Shoes</a>
+          <a href="running-nonpro.html">Non-Professional</a>
+        </div>
+        <div class="dropdown-section">
+          <div class="dropdown-label">Cycling</div>
+          <a href="coming-soon.html">Bikes</a>
+          <a href="coming-soon.html">Shoes</a>
+          <a href="coming-soon.html">Helmets</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <span>Accessories<svg viewBox="0 0 10 6" style="width:9px;height:9px;min-width:9px;flex-shrink:0"><polyline points="1,1 5,5 9,1"/></svg></span>
+      <div class="dropdown">
+        <a href="coming-soon.html">Watches</a>
+        <a href="coming-soon.html">HR Monitoring</a>
+      </div>
+    </div>
+    <a class="nav-blog" href="blog.html">Blog</a>
+  </div>
+  <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">Dark mode</button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-kicker">Sports - Running</div>
+  <div class="page-title">What wins<br>on <mark>every surface.</mark></div>
+  <p class="page-sub">We track running gear from the world's biggest race podiums. Road marathons, mountain trails and everything in between.</p>
+</div>
+
+<section class="cats">
+  <div class="section-label" style="grid-column:1/-1">Shoes</div>
+
+  <div class="cat" onclick="location.href='running-road.html'">
+    <div class="cat-top">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M3 17h18v1.5a1 1 0 01-1 1H4a1 1 0 01-1-1V17z"/>
+          <path d="M5 17V13c0-1 .5-2 1.5-2.5L9 9.5l2.5-1c1-.4 2-.3 2.5.7l1 2 2 1.8"/>
+          <path d="M9 17v-3"/>
+          <circle cx="16" cy="7" r="1.2"/>
+        </svg>
+      </div>
+      <span class="cat-status live">Live</span>
+    </div>
+    <div class="cat-name">ROAD SHOES</div>
+    <div class="cat-desc">Every road racing shoe from the marathon Major podiums. Tokyo, Boston, London, Berlin, Chicago, New York, Sydney.</div>
+    <div class="cat-races">
+      <div class="cat-race">Abbott World Marathon Majors</div>
+      <div class="cat-race">Sydney Marathon</div>
+    </div>
+    <div class="cat-link">Browse road shoes →</div>
+  </div>
+
+  <div class="cat" onclick="location.href='running-trail.html'">
+    <div class="cat-top">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M3 18l4-8 3 4 3-6 4 10"/>
+          <path d="M3 18h18"/>
+        </svg>
+      </div>
+      <span class="cat-status soon">Coming soon</span>
+    </div>
+    <div class="cat-name">TRAIL SHOES</div>
+    <div class="cat-desc">Podium gear from UTMB, Western States 100, Hardrock and the world's most demanding mountain races.</div>
+    <div class="cat-races">
+      <div class="cat-race">UTMB Mont-Blanc</div>
+      <div class="cat-race">Western States 100</div>
+      <div class="cat-race">Hardrock 100</div>
+    </div>
+    <div class="cat-link">Notify me →</div>
+  </div>
+
+  <div class="cat" onclick="location.href='running-nonpro.html'">
+    <div class="cat-top">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24">
+          <circle cx="14" cy="4" r="1.5"/>
+          <path d="M10 8.5l2-2.5h4l1.5 3-3 1.5"/>
+          <path d="M10 8.5L8 12l2 2v4"/>
+          <path d="M12 14l3 1.5 2 3.5"/>
+        </svg>
+      </div>
+      <span class="cat-status soon">Coming soon</span>
+    </div>
+    <div class="cat-name">NON-PROFESSIONAL</div>
+    <div class="cat-desc">The best training and everyday shoes for runners who aren't racing for a podium - but still want great gear.</div>
+    <div class="cat-races">
+      <div class="cat-race">Daily trainers</div>
+      <div class="cat-race">Stability shoes</div>
+      <div class="cat-race">Beginner picks</div>
+    </div>
+    <div class="cat-link">Notify me →</div>
+  </div>
+
+</section>
+
+<footer>
+  <div class="footer-logo">RELVNT.CC</div>
+  <div class="footer-note">Data sourced from race results · Affiliate links may earn commission</div>
+</footer>
+
+<script>
+function toggleTheme(){const h=document.documentElement;const d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');document.getElementById('themeBtn').textContent=d?'Dark mode':'Light mode';localStorage.setItem('theme',d?'light':'dark')}
+(function(){const t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);const b=document.getElementById('themeBtn');if(b)b.textContent=t==='dark'?'Light mode':'Dark mode'})();
+</script>
+</body>
+</html>
