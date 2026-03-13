@@ -4,7 +4,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230a0a0a'/><text x='50' y='72' font-family='Arial Black,sans-serif' font-size='52' font-weight='900' fill='%23c8f542' text-anchor='middle' letter-spacing='-6'>RLV</text></svg>">
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Relvnt - Gear That Wins</title>
+<title>Relvnt  -  Gear That Wins</title>
 <meta name="description" content="Gear guides, race analysis and buying advice from the podiums of the world's biggest endurance races.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -52,6 +52,23 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
   .posts-grid{grid-template-columns:1fr}
 }
 </style>
+<style>
+.nav-item{position:relative}
+.nav-item>a,.nav-item>span{color:var(--muted);text-decoration:none;padding:.4rem 1.2rem .7rem;display:flex;align-items:center;gap:.35rem;cursor:pointer;white-space:nowrap}
+.nav-item>a:hover,.nav-item>span:hover{color:var(--text)}
+.nav-item>span svg,.nav-item>a svg{width:9px;height:9px;min-width:9px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;transition:transform .15s;display:inline-block}
+.nav-item:hover>span svg{transform:rotate(180deg)}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--card);border:0.5px solid var(--border);border-radius:6px;min-width:160px;padding:.4rem 0;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+[data-theme="dark"] .dropdown{box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.nav-item:hover .dropdown{display:block}
+.dropdown a{display:block;padding:.5rem 1.1rem;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;white-space:nowrap}
+.dropdown a:hover{color:var(--text);background:var(--bg)}
+.dropdown-section{padding:.3rem 0;border-top:0.5px solid var(--border);margin-top:.3rem}
+.dropdown-section:first-child{border-top:none;margin-top:0}
+.dropdown-label{padding:.4rem 1.1rem .2rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.nav-blog{color:var(--muted);text-decoration:none;padding:.4rem 1.2rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+.nav-blog:hover{color:var(--text)}
+</style>
 </head>
 <body>
 
@@ -60,7 +77,7 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
   <div class="nav-links">
 
     <div class="nav-item">
-      <span>Sports<svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"/></svg></span>
+      <span>Sports<svg viewBox="0 0 10 6" style="width:9px;height:9px;min-width:9px;flex-shrink:0"><polyline points="1,1 5,5 9,1"/></svg></span>
       <div class="dropdown">
         <div class="dropdown-section">
           <div class="dropdown-label">Running</div>
@@ -78,7 +95,7 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
     </div>
 
     <div class="nav-item">
-      <span>Accessories<svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"/></svg></span>
+      <span>Accessories<svg viewBox="0 0 10 6" style="width:9px;height:9px;min-width:9px;flex-shrink:0"><polyline points="1,1 5,5 9,1"/></svg></span>
       <div class="dropdown">
         <a href="coming-soon.html">Watches</a>
         <a href="coming-soon.html">HR Monitoring</a>
@@ -93,7 +110,7 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
 <div class="page-header">
   <a href="index.html" class="back">← Back to home</a>
   <h1 class="page-title">FROM THE<br>BLOG</h1>
-  <p class="page-sub">Gear guides, race analysis and buying advice - all rooted in podium data.</p>
+  <p class="page-sub">Gear guides, race analysis and buying advice  -  all rooted in podium data.</p>
 </div>
 
 <div class="posts-wrap">
@@ -109,21 +126,21 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
     <div class="post" onclick="location.href='best-running-shoes-beginners-2026.html'">
       <div class="post-cat">Running · Guide</div>
       <div class="post-title">BEST RUNNING SHOES FOR BEGINNERS IN 2026</div>
-      <div class="post-body">New to running? Learn how to choose the right pair - fit, cushioning, support, and common mistakes to avoid.</div>
+      <div class="post-body">New to running? Learn how to choose the right pair  -  fit, cushioning, support, and common mistakes to avoid.</div>
       <div class="post-date">March 2026</div>
     </div>
 
     <div class="post" onclick="location.href='5k-running-plan-gps-watch.html'">
       <div class="post-cat">Running · Training</div>
       <div class="post-title">BEGINNER'S 5K RUNNING PLAN WITH A GPS WATCH</div>
-      <div class="post-body">From run-walk intervals to race day - a 4–8 week plan built around your GPS watch.</div>
+      <div class="post-body">From run-walk intervals to race day  -  a 4-8 week plan built around your GPS watch.</div>
       <div class="post-date">March 2026</div>
     </div>
 
     <div class="post" onclick="location.href='how-to-choose-first-road-bike.html'">
       <div class="post-cat">Cycling · Guide</div>
       <div class="post-title">HOW TO CHOOSE YOUR FIRST ROAD BIKE</div>
-      <div class="post-body">From frame type and sizing to components, budget, and test rides - a complete beginner guide.</div>
+      <div class="post-body">From frame type and sizing to components, budget, and test rides  -  a complete beginner guide.</div>
       <div class="post-date">March 2026</div>
     </div>
 
@@ -143,7 +160,7 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
 
     <div class="post" onclick="location.href='gps-running-watches-2026.html'">
       <div class="post-cat">Watches · Guide</div>
-      <div class="post-title">GPS RUNNING WATCHES IN 2026 – WHICH FEATURES ACTUALLY MATTER?</div>
+      <div class="post-title">GPS RUNNING WATCHES IN 2026 - WHICH FEATURES ACTUALLY MATTER?</div>
       <div class="post-body">Overwhelmed by specs? Here's what actually matters when picking a GPS watch for your running.</div>
       <div class="post-date">March 2026</div>
     </div>
