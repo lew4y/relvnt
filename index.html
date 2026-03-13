@@ -1,11 +1,284 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relvnt — Running Shoe Intelligence</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relvnt — Running Shoe Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+[data-theme="light"]{
+  --bg:#f5f2ee;--bg2:#ede9e3;--bg3:#e4dfd7;--card:#ffffff;--border:rgba(0,0,0,0.1);--text:#0a0a0a;--text2:#555550;--text3:#999990;--nav-bg:rgba(245,242,238,0.94);
+}
+[data-theme="dark"]{
+  --bg:#0a0a0a;--bg2:#141414;--bg3:#1a1a1a;--card:#141414;--border:rgba(255,255,255,0.08);--text:#f5f2ee;--text2:#aaa89f;--text3:#666660;--nav-bg:rgba(10,10,10,0.94);
+}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden;transition:background 0.3s,color 0.3s}
+a{color:inherit;text-decoration:none}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--nav-bg);backdrop-filter:blur(12px);z-index:100}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.08em;color:var(--text)}
+[data-theme="dark"] .logo{color:#c8f542}
+.nav-links{display:flex;gap:2rem;font-size:0.82rem;letter-spacing:0.05em;text-transform:uppercase;color:var(--text2)}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.theme-toggle{background:var(--bg2);border:0.5px solid var(--border);border-radius:20px;padding:0.3rem 0.7rem;cursor:pointer;display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:var(--text2);font-family:'DM Sans',sans-serif}
+.theme-toggle:hover{color:var(--text)}
+.nav-cta{background:var(--text);color:var(--bg);padding:0.5rem 1.2rem;font-size:0.8rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;border-radius:2px;cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
+.hero{padding:5rem 3rem 4rem;display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:center;border-bottom:0.5px solid var(--border)}
+.hero-label{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text3);margin-bottom:1.2rem}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,7vw,6.5rem);line-height:0.95;letter-spacing:0.02em;margin-bottom:2rem;color:var(--text)}
+.hero h1 em{font-style:normal;background:#c8f542;color:#0a0a0a;padding:0 0.15em}
+.hero-sub{font-size:0.95rem;color:var(--text2);max-width:380px;line-height:1.85;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:1rem;align-items:center}
+.btn-primary{background:var(--text);color:var(--bg);padding:0.8rem 2rem;font-weight:500;font-size:0.88rem;letter-spacing:0.04em;border-radius:2px;cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
+.btn-secondary{border:0.5px solid var(--border);padding:0.8rem 2rem;font-size:0.88rem;color:var(--text2);border-radius:2px;cursor:pointer;background:none;font-family:'DM Sans',sans-serif}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.stat{background:var(--card);padding:2rem 1.5rem}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--text);line-height:1}
+.stat-label{font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text3);margin-top:0.4rem}
+.section{padding:4rem 3rem}
+.section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2rem}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.04em;color:var(--text)}
+.section-link{font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);cursor:pointer}
+.filters{background:var(--card);border:0.5px solid var(--border);border-radius:4px;padding:1.5rem;margin-bottom:2rem}
+.filters-row{display:flex;gap:1.2rem;flex-wrap:wrap;align-items:flex-end}
+.filter-label{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3);display:block;margin-bottom:0.4rem}
+.filter-group{display:flex;flex-direction:column}
+select{background:var(--bg2);border:0.5px solid var(--border);color:var(--text);padding:0.45rem 0.8rem;font-family:'DM Sans',sans-serif;font-size:0.84rem;border-radius:2px;outline:none;min-width:130px;cursor:pointer}
+.filter-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1rem;padding-top:1rem;border-top:0.5px solid var(--border)}
+.tag{padding:0.28rem 0.75rem;border:0.5px solid var(--border);border-radius:20px;font-size:0.73rem;letter-spacing:0.04em;cursor:pointer;transition:all 0.15s;background:transparent;color:var(--text2)}
+.tag.active,.tag:hover{background:#c8f542;color:#0a0a0a;border-color:#c8f542}
+.shoes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1px;background:var(--border)}
+.shoe-card{background:var(--card);cursor:pointer;transition:background 0.15s;display:flex;flex-direction:column}
+.shoe-card:hover{background:var(--bg2)}
+.shoe-img-wrap{width:100%;height:160px;background:var(--bg2);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;border-bottom:0.5px solid var(--border)}
+.shoe-img-wrap img{width:100%;height:100%;object-fit:contain;padding:1rem;transition:transform 0.3s}
+.shoe-card:hover .shoe-img-wrap img{transform:scale(1.04)}
+.shoe-img-fallback{width:72px;height:72px;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--text3);letter-spacing:0.05em}
+.shoe-race-badge{position:absolute;top:0.6rem;left:0.6rem;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;background:#c8f542;color:#0a0a0a;padding:0.2rem 0.5rem;border-radius:2px;font-weight:500}
+.shoe-body{padding:1.2rem 1.4rem;flex:1;display:flex;flex-direction:column}
+.shoe-brand{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);margin-bottom:0.2rem}
+.shoe-name{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:0.03em;margin-bottom:0.8rem;color:var(--text);line-height:1.1}
+.shoe-tags{display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:1rem}
+.shoe-tag{font-size:0.63rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.18rem 0.45rem;border:0.5px solid var(--border);border-radius:2px;color:var(--text3)}
+.shoe-tag.carbon{border-color:#c8f542;color:#5a7a00}
+[data-theme="dark"] .shoe-tag.carbon{color:#c8f542}
+.shoe-meta{display:flex;justify-content:space-between;align-items:flex-end;padding-top:1rem;border-top:0.5px solid var(--border);margin-top:auto}
+.shoe-rank{font-size:0.68rem;color:var(--text3);letter-spacing:0.04em}
+.shoe-buy{background:var(--text);color:var(--bg);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:0.4rem 0.85rem;border-radius:2px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.blog-card{background:var(--card);padding:2rem 1.5rem;cursor:pointer;transition:background 0.15s}
+.blog-card:hover{background:var(--bg2)}
+.blog-tag{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text3);margin-bottom:0.8rem}
+.blog-title{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;line-height:1.1;margin-bottom:0.8rem;letter-spacing:0.02em;color:var(--text)}
+.blog-excerpt{font-size:0.84rem;color:var(--text2);line-height:1.7}
+.blog-date{font-size:0.68rem;color:var(--text3);margin-top:1.5rem;letter-spacing:0.05em}
+footer{padding:2.5rem 3rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--text);letter-spacing:0.08em}
+.footer-note{font-size:0.72rem;color:var(--text3);letter-spacing:0.04em}
+</style>
 </head>
 <body>
-    <h1>Coming soon</h1>
+
+<nav>
+  <div class="logo">RELVNT</div>
+  <div class="nav-links">
+    <a href="#">Shoe Finder</a>
+    <a href="#">Majors Data</a>
+    <a href="#">Blog</a>
+    <a href="#">About</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()">
+      <span id="themeIcon">🌙</span>
+      <span id="themeLabel">Dark</span>
+    </button>
+    <button class="nav-cta">Find Your Shoe</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="hero-label">Marathon Majors Intelligence</div>
+    <h1>FIND THE SHOE THAT <em>WINS</em> MAJORS</h1>
+    <p class="hero-sub">Filter through every shoe worn on the podiums of all 7 Abbott World Marathon Majors — by race, year, brand, drop, weight and more.</p>
+    <div class="hero-actions">
+      <button class="btn-primary">Start Filtering</button>
+      <button class="btn-secondary">Read the Data →</button>
+    </div>
+  </div>
+  <div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">7</div><div class="stat-label">World Majors</div></div>
+      <div class="stat"><div class="stat-num">5</div><div class="stat-label">Years of Data</div></div>
+      <div class="stat"><div class="stat-num">120+</div><div class="stat-label">Shoes Tracked</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <div class="section-title">SHOE FINDER</div>
+    <div class="section-link">View All →</div>
+  </div>
+  <div class="filters">
+    <div class="filters-row">
+      <div class="filter-group"><span class="filter-label">Race</span>
+        <select><option>All Majors</option><option>Boston</option><option>Tokyo</option><option>London</option><option>Berlin</option><option>Chicago</option><option>New York</option></select>
+      </div>
+      <div class="filter-group"><span class="filter-label">Year</span>
+        <select><option>All Years</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option></select>
+      </div>
+      <div class="filter-group"><span class="filter-label">Brand</span>
+        <select><option>All Brands</option><option>Nike</option><option>Adidas</option><option>Hoka</option><option>Asics</option><option>New Balance</option><option>Saucony</option><option>Brooks</option></select>
+      </div>
+      <div class="filter-group"><span class="filter-label">Drop</span>
+        <select><option>Any Drop</option><option>0–4mm</option><option>5–7mm</option><option>8mm+</option></select>
+      </div>
+    </div>
+    <div class="filter-tags">
+      <span class="tag active">All</span>
+      <span class="tag">Carbon Plate</span>
+      <span class="tag">No Carbon</span>
+      <span class="tag">Max Cushion</span>
+      <span class="tag">Lightweight</span>
+    </div>
+  </div>
+
+  <div class="shoes-grid">
+    <div class="shoe-card">
+      <div class="shoe-img-wrap">
+        <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto/adizero-adios-pro-evo-1.jpg" alt="Adizero Adios Pro Evo 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="shoe-img-fallback" style="display:none">AAP</div>
+        <div class="shoe-race-badge">Tokyo 2024 · #1</div>
+      </div>
+      <div class="shoe-body">
+        <div class="shoe-brand">Adidas</div>
+        <div class="shoe-name">Adizero Adios Pro Evo 1</div>
+        <div class="shoe-tags"><span class="shoe-tag carbon">Carbon</span><span class="shoe-tag">4mm drop</span><span class="shoe-tag">138g</span><span class="shoe-tag">Max cushion</span></div>
+        <div class="shoe-meta"><div class="shoe-rank">Top pick — 6 Majors 2024</div><button class="shoe-buy">Check Price →</button></div>
+      </div>
+    </div>
+    <div class="shoe-card">
+      <div class="shoe-img-wrap">
+        <img src="https://static.nike.com/a/images/t_PDP_1280_v1/alphafly-3.jpg" alt="Nike Alphafly 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="shoe-img-fallback" style="display:none">AF3</div>
+        <div class="shoe-race-badge">Chicago 2024 · WR</div>
+      </div>
+      <div class="shoe-body">
+        <div class="shoe-brand">Nike</div>
+        <div class="shoe-name">Alphafly 3</div>
+        <div class="shoe-tags"><span class="shoe-tag carbon">Carbon</span><span class="shoe-tag">8mm drop</span><span class="shoe-tag">218g</span><span class="shoe-tag">Max cushion</span></div>
+        <div class="shoe-meta"><div class="shoe-rank">World Record shoe 2024</div><button class="shoe-buy">Check Price →</button></div>
+      </div>
+    </div>
+    <div class="shoe-card">
+      <div class="shoe-img-wrap">
+        <img src="https://images.asics.com/is/image/asics/metaspeed-sky-paris.jpg" alt="Asics Metaspeed Sky Paris" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="shoe-img-fallback" style="display:none">MSP</div>
+        <div class="shoe-race-badge">Berlin 2024 · W#2</div>
+      </div>
+      <div class="shoe-body">
+        <div class="shoe-brand">Asics</div>
+        <div class="shoe-name">Metaspeed Sky Paris</div>
+        <div class="shoe-tags"><span class="shoe-tag carbon">Carbon</span><span class="shoe-tag">5mm drop</span><span class="shoe-tag">183g</span><span class="shoe-tag">Max cushion</span></div>
+        <div class="shoe-meta"><div class="shoe-rank">Olympic debut model</div><button class="shoe-buy">Check Price →</button></div>
+      </div>
+    </div>
+    <div class="shoe-card">
+      <div class="shoe-img-wrap">
+        <img src="https://www.on-running.com/cloudboom-strike-ls.jpg" alt="On Cloudboom Strike LS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="shoe-img-fallback" style="display:none">CBS</div>
+        <div class="shoe-race-badge">Boston 2024 · W#1</div>
+      </div>
+      <div class="shoe-body">
+        <div class="shoe-brand">On</div>
+        <div class="shoe-name">Cloudboom Strike LS</div>
+        <div class="shoe-tags"><span class="shoe-tag carbon">Carbon</span><span class="shoe-tag">6mm drop</span><span class="shoe-tag">170g</span><span class="shoe-tag">Max cushion</span></div>
+        <div class="shoe-meta"><div class="shoe-rank">Boston + Chicago W 2024</div><button class="shoe-buy">Check Price →</button></div>
+      </div>
+    </div>
+    <div class="shoe-card">
+      <div class="shoe-img-wrap">
+        <img src="https://images.puma.com/deviate-nitro-elite-3.jpg" alt="Puma Deviate Nitro Elite 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="shoe-img-fallback" style="display:none">DNE</div>
+        <div class="shoe-race-badge">New York 2024 · W#3</div>
+      </div>
+      <div class="shoe-body">
+        <div class="shoe-brand">Puma</div>
+        <div class="shoe-name">Deviate Nitro Elite 3</div>
+        <div class="shoe-tags"><span class="shoe-tag carbon">Carbon</span><span class="shoe-tag">8mm drop</span><span class="shoe-tag">198g</span><span class="shoe-tag">Max cushion</span></div>
+        <div class="shoe-meta"><div class="shoe-rank">Most worn shoe top 20 NYC</div><button class="shoe-buy">Check Price →</button></div>
+      </div>
+    </div>
+    <div class="shoe-card">
+      <div class="shoe-img-wrap">
+        <img src="https://images.underarmour.com/velociti-elite-2.jpg" alt="UA Velociti Elite 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="shoe-img-fallback" style="display:none">VE2</div>
+        <div class="shoe-race-badge">Boston 2024 · W#2</div>
+      </div>
+      <div class="shoe-body">
+        <div class="shoe-brand">Under Armour</div>
+        <div class="shoe-name">Velociti Elite 2</div>
+        <div class="shoe-tags"><span class="shoe-tag carbon">Carbon</span><span class="shoe-tag">2mm drop</span><span class="shoe-tag">210g</span><span class="shoe-tag">Max cushion</span></div>
+        <div class="shoe-meta"><div class="shoe-rank">Sharon Lokedi, Boston #2</div><button class="shoe-buy">Check Price →</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg2);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border)">
+  <div class="section-header">
+    <div class="section-title">FROM THE BLOG</div>
+    <div class="section-link">All Posts →</div>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <div class="blog-tag">Analysis</div>
+      <div class="blog-title">WHICH SHOE DOMINATED BERLIN 2024?</div>
+      <div class="blog-excerpt">We broke down every finisher in the top 100 to find out which carbon plate ruled the fastest marathon course on earth.</div>
+      <div class="blog-date">March 2025</div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-tag">Guide</div>
+      <div class="blog-title">CARBON VS NO CARBON: WHAT THE DATA SAYS</div>
+      <div class="blog-excerpt">Five years of Majors data reveals a clear answer — but it's not as simple as you think. Drop and weight matter just as much.</div>
+      <div class="blog-date">February 2025</div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-tag">Comparison</div>
+      <div class="blog-title">ALPHAFLY 3 VS ADIOS PRO EVO 1: THE VERDICT</div>
+      <div class="blog-excerpt">The two most-worn shoes at the 2024 Majors go head to head. We compare drop, weight and podium appearances.</div>
+      <div class="blog-date">January 2025</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">RELVNT.CC</div>
+  <div class="footer-note">Data sourced from Abbott World Marathon Majors results · Affiliate links may earn commission</div>
+</footer>
+
+<script>
+document.querySelectorAll('.tag').forEach(t=>{
+  t.addEventListener('click',function(){
+    document.querySelectorAll('.tag').forEach(x=>x.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+function toggleTheme(){
+  const html=document.documentElement;
+  const isDark=html.getAttribute('data-theme')==='dark';
+  html.setAttribute('data-theme',isDark?'light':'dark');
+  document.getElementById('themeIcon').textContent=isDark?'🌙':'☀️';
+  document.getElementById('themeLabel').textContent=isDark?'Dark':'Light';
+  localStorage.setItem('relvnt-theme',isDark?'light':'dark');
+}
+const saved=localStorage.getItem('relvnt-theme');
+if(saved){
+  document.documentElement.setAttribute('data-theme',saved);
+  if(saved==='dark'){document.getElementById('themeIcon').textContent='☀️';document.getElementById('themeLabel').textContent='Light';}
+}
+</script>
 </body>
 </html>
