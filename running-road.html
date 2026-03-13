@@ -48,10 +48,13 @@ select:hover{border-color:var(--text)}
 [data-theme="light"] .shoe-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.05)}
 .shoe-card:hover{transform:translateY(-2px)}
 .shoe-card-top{display:flex;align-items:center;justify-content:space-between}
-.shoe-avatar{width:44px;height:44px;border-radius:8px;background:var(--bg);border:0.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.05em;color:var(--muted);flex-shrink:0;overflow:hidden}
-.shoe-avatar.has-img{width:44px;height:44px;border-radius:8px;background:transparent}
-.shoe-avatar img{width:100%;height:100%;object-fit:contain;padding:4px;transition:transform .25s ease}
-.shoe-avatar.has-img:hover img{transform:scale(1.75)}
+.shoe-avatar{width:44px;height:44px;border-radius:8px;background:var(--bg);border:0.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.05em;color:var(--muted);flex-shrink:0;overflow:hidden;position:relative}
+.shoe-avatar.has-img{width:44px;height:44px;border-radius:8px;background:transparent;overflow:visible}
+.shoe-avatar img{width:100%;height:100%;object-fit:contain;padding:4px}
+.shoe-avatar.has-img .img-preview{position:absolute;left:calc(100% + 12px);top:50%;transform:translateY(-50%) scale(0.85);opacity:0;width:220px;height:220px;background:var(--card);border:0.5px solid var(--border);border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;pointer-events:none;transition:opacity .2s ease,transform .2s ease;z-index:100}
+[data-theme="dark"] .shoe-avatar.has-img .img-preview{box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.shoe-avatar.has-img .img-preview img{width:90%;height:90%;object-fit:contain}
+.shoe-avatar.has-img:hover .img-preview{opacity:1;transform:translateY(-50%) scale(1)}
 .shoe-rank{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1;color:var(--faint)}
 .shoe-rank.gold{color:#c8a84b}
 .shoe-rank.silver{color:#a0a0a0}
@@ -369,7 +372,7 @@ function renderCards(shoes) {
       : null;
     const avatarClass = imgSrc ? 'shoe-avatar has-img' : 'shoe-avatar';
     const avatarInner = imgSrc
-      ? `<img src="${imgSrc}" alt="${s.model}" onerror="this.parentElement.innerHTML='${initials}';this.parentElement.className='shoe-avatar';">`
+      ? `<img src="${imgSrc}" alt="${s.model}" onerror="this.parentElement.innerHTML='${initials}';this.parentElement.className='shoe-avatar';"><div class="img-preview"><img src="${imgSrc}" alt="${s.model}"></div>`
       : initials;
     const drop      = s.drop_mm  ? `${s.drop_mm}mm` : ' - ';
     const weight    = s.weight_g ? `${s.weight_g}g`  : ' - ';
