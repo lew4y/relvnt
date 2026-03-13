@@ -181,13 +181,6 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
   </div>
 
   <div class="filter-sep"></div>
-
-  <div class="filter-tags">
-    <div class="tag" data-filter="carbon" onclick="toggleTag(this)">Carbon plate</div>
-    <div class="tag" data-filter="nocarbon" onclick="toggleTag(this)">No carbon</div>
-  </div>
-
-  <div class="filter-sep"></div>
   <button class="clear-btn" onclick="clearFilters()">Clear all</button>
 </div>
 
@@ -204,7 +197,6 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
 const SHEET_ID = '1M0FH57biV3rK2mmKLsuYRAgItBPJMyOYYoTQ3ROQscY';
 const SHEET_NAME = 'Shoe Database 2025';
 let allShoes = [];
-let activeTags = new Set();
 
 function getInitials(brand, model) {
   const b = (brand||'').trim();
@@ -274,28 +266,17 @@ function applyFilters() {
     if (support        && s.support        !== support)        return false;
     if (cushioning     && s.cushioning     !== cushioning)     return false;
     if (responsiveness && s.responsiveness !== responsiveness) return false;
-    const hasCarbon = ['yes','true','1'].includes((s.carbon||'').toLowerCase().trim());
-    if (activeTags.has('carbon')   && !hasCarbon) return false;
-    if (activeTags.has('nocarbon') &&  hasCarbon) return false;
+
     return true;
   });
 
   renderCards(filtered);
 }
 
-function toggleTag(el) {
-  const f = el.dataset.filter;
-  if (activeTags.has(f)) { activeTags.delete(f); el.classList.remove('active'); }
-  else { activeTags.add(f); el.classList.add('active'); }
-  applyFilters();
-}
-
 function clearFilters() {
   ['filterRace','filterYear','filterBrand','filterGender',
    'filterPronation','filterSupport','filterCushioning','filterResponsiveness'
   ].forEach(id => document.getElementById(id).value = '');
-  activeTags.clear();
-  document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
   renderCards(allShoes);
 }
 
@@ -315,10 +296,6 @@ function renderCards(shoes) {
     const weight    = s.weight_g ? `${s.weight_g}g`  : '—';
     const rank      = s.rank || '—';
     const rc        = rankClass(parseInt(s.rank));
-    const hasCarbon = ['yes','true','1'].includes((s.carbon||'').toLowerCase().trim());
-    const carbonBadge = hasCarbon
-      ? '<span class="badge badge-carbon">Carbon</span>'
-      : '<span class="badge badge-nocarbon">No carbon</span>';
     const yearBadge = s.year ? `<span class="badge badge-year">${s.year}</span>` : '';
     const ctaBtn = s.affiliate_url
       ? `<a href="${s.affiliate_url}" target="_blank" rel="noopener" class="btn-price">Check Price →</a>`
@@ -341,7 +318,7 @@ function renderCards(shoes) {
         <div class="shoe-race">${raceLabel}</div>
         ${runnerLine}
       </div>
-      <div class="shoe-meta">${carbonBadge}${yearBadge}</div>
+      <div class="shoe-meta">${yearBadge}</div>
       <div class="shoe-specs">
         <div class="spec"><div class="spec-val">${drop}</div><div class="spec-key">Drop</div></div>
         <div class="spec"><div class="spec-val">${weight}</div><div class="spec-key">Weight</div></div>
