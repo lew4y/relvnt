@@ -3,109 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Relvnt — Running Shoe Intelligence</title>
-<meta name="description" content="Filter every shoe worn on the podiums of all 7 Abbott World Marathon Majors. Data-driven running shoe intelligence.">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<title>Relvnt — Gear That Wins</title>
+<meta name="description" content="We track every piece of gear worn on the podiums of the world's most prestigious endurance races.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-[data-theme="light"]{
-  --bg:#f5f2ee;--bg2:#ede9e3;--bg3:#e4dfd7;--card:#ffffff;
-  --border:rgba(0,0,0,0.1);--text:#0a0a0a;--text2:#555550;
-  --text3:#999990;--nav-bg:rgba(245,242,238,0.94);
-}
-[data-theme="dark"]{
-  --bg:#0a0a0a;--bg2:#141414;--bg3:#1a1a1a;--card:#141414;
-  --border:rgba(255,255,255,0.08);--text:#f5f2ee;--text2:#aaa89f;
-  --text3:#666660;--nav-bg:rgba(10,10,10,0.94);
-}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden;transition:background 0.3s,color 0.3s}
-a{color:inherit;text-decoration:none}
+:root{--bg:#f7f5f2;--card:#ffffff;--border:rgba(0,0,0,0.08);--text:#0a0a0a;--muted:#888884;--faint:#c4c2bc;--accent:#c8f542;--nav-bg:rgba(247,245,242,0.95)}
+[data-theme="dark"]{--bg:#0c0c0c;--card:#151515;--border:rgba(255,255,255,0.07);--text:#f0ede8;--muted:#77766f;--faint:#383835;--nav-bg:rgba(12,12,12,0.95)}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;transition:background .3s,color .3s}
 
-nav{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--nav-bg);backdrop-filter:blur(12px);z-index:100}
-.logo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.08em;color:var(--text)}
-[data-theme="dark"] .logo{color:#c8f542}
-.nav-links{display:flex;gap:2rem;font-size:0.82rem;letter-spacing:0.05em;text-transform:uppercase;color:var(--text2)}
-.nav-links a:hover{color:var(--text)}
-.nav-right{display:flex;align-items:center;gap:1rem}
-.theme-toggle{background:var(--bg2);border:0.5px solid var(--border);border-radius:20px;padding:0.3rem 0.7rem;cursor:pointer;display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:var(--text2);font-family:'DM Sans',sans-serif}
-.theme-toggle:hover{color:var(--text)}
-.nav-cta{background:var(--text);color:var(--bg);padding:0.5rem 1.2rem;font-size:0.8rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;border-radius:2px;cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
+nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:1.4rem 4rem}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:.1em;color:var(--text)}
+[data-theme="dark"] .logo{color:var(--accent)}
+.nav-links{display:flex;gap:2.5rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.nav-links a{color:inherit;text-decoration:none}
+.nav-links a:hover{color:var(--text);transition:color .15s}
+.theme-btn{background:none;border:0.5px solid var(--border);border-radius:20px;padding:.28rem .85rem;font-size:.72rem;color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.05em}
+.theme-btn:hover{color:var(--text)}
 
-.hero{padding:5rem 3rem 4rem;display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:center;border-bottom:0.5px solid var(--border)}
-.hero-label{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text3);margin-bottom:1.2rem}
-.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,7vw,6.5rem);line-height:0.95;letter-spacing:0.02em;margin-bottom:2rem;color:var(--text)}
-.hero h1 em{font-style:normal;background:#c8f542;color:#0a0a0a;padding:0 0.15em}
-.hero-sub{font-size:0.95rem;color:var(--text2);max-width:380px;line-height:1.85;margin-bottom:2.5rem}
-.hero-actions{display:flex;gap:1rem;align-items:center}
-.btn-primary{background:var(--text);color:var(--bg);padding:0.8rem 2rem;font-weight:500;font-size:0.88rem;letter-spacing:0.04em;border-radius:2px;cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
-.btn-secondary{border:0.5px solid var(--border);padding:0.8rem 2rem;font-size:0.88rem;color:var(--text2);border-radius:2px;cursor:pointer;background:none;font-family:'DM Sans',sans-serif}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
-.stat{background:var(--card);padding:2rem 1.5rem}
-.stat-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--text);line-height:1}
-.stat-label{font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text3);margin-top:0.4rem}
+.hero{padding:8rem 4rem 7rem;max-width:800px}
+.hero-kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin-bottom:2rem}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,9vw,7.5rem);line-height:.92;letter-spacing:.015em;margin-bottom:2.5rem}
+.hero h1 mark{background:var(--accent);color:#0a0a0a;padding:0 .1em;font-style:normal}
+.hero-sub{font-size:.97rem;color:var(--muted);line-height:1.9;max-width:460px;margin-bottom:3rem}
+.hero-btn{background:var(--text);color:var(--bg);padding:.85rem 2.2rem;font-size:.84rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;border-radius:2px;cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
 
-.section{padding:4rem 3rem}
-.section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2rem}
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.04em;color:var(--text)}
-.section-link{font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);cursor:pointer}
-.section-link:hover{color:var(--text)}
+.rule{height:0.5px;background:var(--border);margin:0 4rem}
 
-.filters{background:var(--card);border:0.5px solid var(--border);border-radius:4px;padding:1.5rem;margin-bottom:2rem}
-.filters-row{display:flex;gap:1.2rem;flex-wrap:wrap;align-items:flex-end}
-.filter-label{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3);display:block;margin-bottom:0.4rem}
-.filter-group{display:flex;flex-direction:column}
-select{background:var(--bg2);border:0.5px solid var(--border);color:var(--text);padding:0.45rem 0.8rem;font-family:'DM Sans',sans-serif;font-size:0.84rem;border-radius:2px;outline:none;min-width:130px;cursor:pointer}
-.filter-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1rem;padding-top:1rem;border-top:0.5px solid var(--border)}
-.tag{padding:0.28rem 0.75rem;border:0.5px solid var(--border);border-radius:20px;font-size:0.73rem;letter-spacing:0.04em;cursor:pointer;transition:all 0.15s;background:transparent;color:var(--text2)}
-.tag.active,.tag:hover{background:#c8f542;color:#0a0a0a;border-color:#c8f542}
-.results-count{font-size:0.78rem;color:var(--text3);letter-spacing:0.05em;margin-bottom:1.5rem}
-.results-count span{color:var(--text);font-weight:500}
+.cats{padding:4rem 4rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.cat{background:var(--card);border:0.5px solid var(--border);border-radius:6px;padding:1.8rem 1.8rem 1.5rem;cursor:pointer;transition:transform .18s;position:relative;display:flex;flex-direction:column;gap:.9rem}
+.cat:hover{transform:translateY(-2px)}
+[data-theme="light"] .cat:hover{box-shadow:0 8px 28px rgba(0,0,0,.05)}
+.cat-top{display:flex;align-items:flex-start;justify-content:space-between}
+.cat-icon{width:44px;height:44px;background:var(--bg);border:0.5px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cat-icon svg{width:22px;height:22px;stroke:var(--text);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.cat-status{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding:.18rem .5rem;border-radius:2px}
+.live{background:var(--accent);color:#0a0a0a}
+.soon{background:var(--faint);color:var(--muted)}
+[data-theme="dark"] .soon{background:#222220;color:var(--muted)}
+.cat-name{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.03em;line-height:1;color:var(--text)}
+.cat-desc{font-size:.8rem;color:var(--muted);line-height:1.75}
+.cat-races{display:flex;flex-direction:column;gap:.3rem}
+.cat-race{font-size:.67rem;letter-spacing:.04em;color:var(--faint);display:flex;align-items:center;gap:.5rem}
+.cat-race::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.cat-link{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.2rem}
+.cat:hover .cat-link{color:var(--text)}
 
-.shoes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1px;background:var(--border)}
-.shoe-card{background:var(--card);cursor:pointer;transition:background 0.15s;display:flex;flex-direction:column}
-.shoe-card:hover{background:var(--bg2)}
-.shoe-img-wrap{width:100%;height:160px;background:var(--bg2);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;border-bottom:0.5px solid var(--border)}
-.shoe-img-fallback{width:72px;height:72px;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--text3);letter-spacing:0.05em}
-.shoe-race-badge{position:absolute;top:0.6rem;left:0.6rem;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;background:#c8f542;color:#0a0a0a;padding:0.2rem 0.5rem;border-radius:2px;font-weight:500}
-.gender-badge{position:absolute;top:0.6rem;right:0.6rem;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--bg3);color:var(--text2);padding:0.2rem 0.5rem;border-radius:2px}
-.shoe-body{padding:1.2rem 1.4rem;flex:1;display:flex;flex-direction:column}
-.shoe-brand{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);margin-bottom:0.2rem}
-.shoe-name{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:0.03em;margin-bottom:0.8rem;color:var(--text);line-height:1.1}
-.shoe-tags{display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:1rem}
-.shoe-tag{font-size:0.63rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.18rem 0.45rem;border:0.5px solid var(--border);border-radius:2px;color:var(--text3)}
-.shoe-tag.carbon{border-color:#c8f542;color:#5a7a00}
-[data-theme="dark"] .shoe-tag.carbon{color:#c8f542}
-.shoe-meta{display:flex;justify-content:space-between;align-items:flex-end;padding-top:1rem;border-top:0.5px solid var(--border);margin-top:auto}
-.shoe-rank{font-size:0.68rem;color:var(--text3);letter-spacing:0.04em}
-.shoe-buy{background:var(--text);color:var(--bg);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:0.4rem 0.85rem;border-radius:2px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
-.shoe-buy:hover{opacity:0.85}
+.about{padding:5rem 4rem;border-top:0.5px solid var(--border);display:grid;grid-template-columns:1fr 1.5fr;gap:7rem;align-items:start}
+.about-label{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:1.5rem}
+.about h2{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;line-height:1;letter-spacing:.02em}
+.about-body{font-size:.88rem;color:var(--muted);line-height:1.95;margin-bottom:2.5rem}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border)}
+.stat{background:var(--card);padding:1.5rem 1.2rem}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;line-height:1;color:var(--text)}
+.stat-l{font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-top:.3rem}
 
-.loading{text-align:center;padding:4rem;color:var(--text3);font-size:0.9rem;letter-spacing:0.08em;text-transform:uppercase}
-.loading-dot{display:inline-block;animation:pulse 1.2s infinite}
-@keyframes pulse{0%,100%{opacity:0.3}50%{opacity:1}}
-.no-results{text-align:center;padding:4rem;color:var(--text3);font-size:0.9rem;background:var(--card);border:0.5px solid var(--border)}
+.blog{padding:0 4rem 5rem;border-top:0.5px solid var(--border)}
+.blog-hd{display:flex;align-items:baseline;justify-content:space-between;padding:3rem 0 2rem}
+.blog-hd-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.04em}
+.blog-hd-all{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);cursor:pointer;text-decoration:none;color:var(--faint)}
+.blog-hd-all:hover{color:var(--text)}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.post{background:var(--card);border:0.5px solid var(--border);border-radius:6px;padding:1.8rem;cursor:pointer;transition:transform .15s}
+.post:hover{transform:translateY(-2px)}
+.post-cat{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--faint);margin-bottom:.7rem}
+.post-title{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;line-height:1.1;letter-spacing:.02em;margin-bottom:.7rem;color:var(--text)}
+.post-body{font-size:.8rem;color:var(--muted);line-height:1.75}
+.post-date{font-size:.62rem;color:var(--faint);margin-top:1.2rem}
 
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
-.blog-card{background:var(--card);padding:2rem 1.5rem;cursor:pointer;transition:background 0.15s}
-.blog-card:hover{background:var(--bg2)}
-.blog-tag{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text3);margin-bottom:0.8rem}
-.blog-title{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;line-height:1.1;margin-bottom:0.8rem;letter-spacing:0.02em;color:var(--text)}
-.blog-excerpt{font-size:0.84rem;color:var(--text2);line-height:1.7}
-.blog-date{font-size:0.68rem;color:var(--text3);margin-top:1.5rem;letter-spacing:0.05em}
+footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.1em;color:var(--text)}
+[data-theme="dark"] .footer-logo{color:var(--accent)}
+.footer-note{font-size:.67rem;color:var(--faint)}
 
-footer{padding:2.5rem 3rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--text);letter-spacing:0.08em}
-.footer-note{font-size:0.72rem;color:var(--text3);letter-spacing:0.04em}
-
-@media(max-width:768px){
-  nav{padding:1rem 1.5rem}
-  .nav-links{display:none}
-  .hero{grid-template-columns:1fr;gap:2rem;padding:3rem 1.5rem}
-  .section{padding:2.5rem 1.5rem}
-  .filters-row{flex-direction:column}
-  select{min-width:100%}
-  .blog-grid{grid-template-columns:1fr}
-  footer{flex-direction:column;gap:1rem;text-align:center}
+@media(max-width:800px){
+  nav,footer{padding:1rem 1.5rem}.nav-links{display:none}
+  .hero{padding:3.5rem 1.5rem 3rem}
+  .rule{margin:0 1.5rem}
+  .cats{grid-template-columns:1fr;padding:3rem 1.5rem;gap:1.5rem}
+  .about{grid-template-columns:1fr;padding:3rem 1.5rem;gap:2.5rem}
+  .blog{padding:0 1.5rem 3rem}
+  .posts{grid-template-columns:1fr;gap:1.2rem}
 }
 </style>
 </head>
@@ -114,293 +92,151 @@ footer{padding:2.5rem 3rem;border-top:0.5px solid var(--border);display:flex;jus
 <nav>
   <div class="logo">RELVNT</div>
   <div class="nav-links">
-    <a href="#finder">Shoe Finder</a>
-    <a href="#blog">Blog</a>
-    <a href="#">About</a>
+    <a href="#">Running</a><a href="#">Cycling</a><a href="#">Watches</a><a href="#">Blog</a>
   </div>
-  <div class="nav-right">
-    <button class="theme-toggle" onclick="toggleTheme()">
-      <span id="themeIcon">🌙</span>
-      <span id="themeLabel">Dark</span>
-    </button>
-    <button class="nav-cta" onclick="document.getElementById('finder').scrollIntoView({behavior:'smooth'})">Find Your Shoe</button>
-  </div>
+  <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">Dark mode</button>
 </nav>
 
 <section class="hero">
-  <div>
-    <div class="hero-label">Marathon Majors Intelligence</div>
-    <h1>FIND THE SHOE THAT <em>WINS</em> MAJORS</h1>
-    <p class="hero-sub">Filter through every shoe worn on the podiums of all 7 Abbott World Marathon Majors — by race, year, brand, drop, weight and more.</p>
-    <div class="hero-actions">
-      <button class="btn-primary" onclick="document.getElementById('finder').scrollIntoView({behavior:'smooth'})">Start Filtering</button>
-      <button class="btn-secondary" onclick="document.getElementById('blog').scrollIntoView({behavior:'smooth'})">Read the Data →</button>
+  <div class="hero-kicker">What wins. What to buy.</div>
+  <h1>GEAR THAT <mark>WINS</mark> THE WORLD'S BIGGEST RACES</h1>
+  <p class="hero-sub">We track every piece of gear worn on the podiums of the world's most prestigious endurance races — so you know exactly what works when it matters most.</p>
+  <button class="hero-btn">Explore Gear</button>
+</section>
+
+<div class="rule"></div>
+
+<section class="cats">
+
+  <div class="cat">
+    <div class="cat-top">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M2 16c0 0 2-1 4-1c1.5 0 2.5.8 4 .8s3.5-.8 6-.8c2 0 4 .5 4 .5v1.5H2V16z"/>
+          <path d="M6 15V12c0-1.5 1-3 3-3.5L12 8l3-1.5c1-.4 2-.5 2.5.5L19 10l1.5 1.5"/>
+          <path d="M9 15v-2.5"/>
+        </svg>
+      </div>
+      <span class="cat-status live">Live</span>
     </div>
+    <div class="cat-name">RUNNING SHOES</div>
+    <div class="cat-desc">Every shoe on the podium at the world's biggest marathons and ultra races. Filter by race, drop, weight, carbon.</div>
+    <div class="cat-races">
+      <div class="cat-race">Abbott World Marathon Majors</div>
+      <div class="cat-race">UTMB Mont-Blanc</div>
+      <div class="cat-race">Western States 100</div>
+      <div class="cat-race">Ironman World Championship</div>
+    </div>
+    <div class="cat-link">Browse shoes →</div>
+  </div>
+
+  <div class="cat">
+    <div class="cat-top">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24">
+          <circle cx="6" cy="16" r="3.5"/>
+          <circle cx="18" cy="16" r="3.5"/>
+          <path d="M6 16l4-7h4l2 7"/>
+          <path d="M10 9l2-4h3"/>
+          <path d="M14 9l4 7"/>
+        </svg>
+      </div>
+      <span class="cat-status soon">Coming soon</span>
+    </div>
+    <div class="cat-name">BIKES &amp; COMPONENTS</div>
+    <div class="cat-desc">Road bikes, TT frames, groupsets and wheels from the most demanding races. What the best actually race on.</div>
+    <div class="cat-races">
+      <div class="cat-race">Tour de France</div>
+      <div class="cat-race">Giro d'Italia</div>
+      <div class="cat-race">Paris–Roubaix</div>
+      <div class="cat-race">Ironman World Championship</div>
+    </div>
+    <div class="cat-link">Notify me →</div>
+  </div>
+
+  <div class="cat">
+    <div class="cat-top">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24">
+          <rect x="7" y="6" width="10" height="12" rx="3"/>
+          <path d="M9 6V4h6v2"/>
+          <path d="M9 18v2h6v-2"/>
+          <path d="M12 9v3l2 1.5"/>
+        </svg>
+      </div>
+      <span class="cat-status soon">Coming soon</span>
+    </div>
+    <div class="cat-name">SPORT WATCHES</div>
+    <div class="cat-desc">GPS watches worn by elite athletes across triathlon, marathon and ultra endurance events worldwide.</div>
+    <div class="cat-races">
+      <div class="cat-race">Ironman World Championship</div>
+      <div class="cat-race">Abbott Marathon Majors</div>
+      <div class="cat-race">UTMB Mont-Blanc</div>
+      <div class="cat-race">Olympic Triathlon</div>
+    </div>
+    <div class="cat-link">Notify me →</div>
+  </div>
+
+</section>
+
+<section class="about">
+  <div>
+    <div class="about-label">The idea</div>
+    <h2>DATA FROM THE PODIUM, NOT THE PRESS ROOM</h2>
   </div>
   <div>
-    <div class="hero-stats">
-      <div class="stat"><div class="stat-num">6</div><div class="stat-label">World Majors</div></div>
-      <div class="stat"><div class="stat-num" id="statShoes">—</div><div class="stat-label">Shoes Tracked</div></div>
-      <div class="stat"><div class="stat-num" id="statBrands">—</div><div class="stat-label">Brands</div></div>
+    <p class="about-body">Most gear recommendations come from brand partnerships, press samples and paid placements. We do it differently — we track what actually wins at the highest level of endurance sport and pair that race data with honest guidance for real athletes.</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">36</div><div class="stat-l">Podium entries</div></div>
+      <div class="stat"><div class="stat-n">6</div><div class="stat-l">Majors covered</div></div>
+      <div class="stat"><div class="stat-n">8</div><div class="stat-l">Brands tracked</div></div>
+      <div class="stat"><div class="stat-n">0</div><div class="stat-l">Paid placements</div></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="finder">
-  <div class="section-header">
-    <div class="section-title">SHOE FINDER</div>
-    <div class="section-link" id="resetBtn" onclick="resetFilters()">Reset Filters</div>
+<section class="blog">
+  <div class="blog-hd">
+    <div class="blog-hd-title">FROM THE BLOG</div>
+    <a href="#" class="blog-hd-all">All posts →</a>
   </div>
-
-  <div class="filters">
-    <div class="filters-row">
-      <div class="filter-group">
-        <span class="filter-label">Race</span>
-        <select id="filterRace" onchange="applyFilters()">
-          <option value="">All Majors</option>
-          <option>Tokyo</option>
-          <option>Boston</option>
-          <option>London</option>
-          <option>Berlin</option>
-          <option>Chicago</option>
-          <option>New York</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">Year</span>
-        <select id="filterYear" onchange="applyFilters()">
-          <option value="">All Years</option>
-          <option>2024</option>
-          <option>2023</option>
-          <option>2022</option>
-          <option>2021</option>
-          <option>2020</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">Brand</span>
-        <select id="filterBrand" onchange="applyFilters()">
-          <option value="">All Brands</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">Gender</span>
-        <select id="filterGender" onchange="applyFilters()">
-          <option value="">All</option>
-          <option value="M">Men</option>
-          <option value="W">Women</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">Drop</span>
-        <select id="filterDrop" onchange="applyFilters()">
-          <option value="">Any Drop</option>
-          <option value="low">0–4mm</option>
-          <option value="mid">5–7mm</option>
-          <option value="high">8mm+</option>
-        </select>
-      </div>
+  <div class="posts">
+    <div class="post">
+      <div class="post-cat">Running · Analysis</div>
+      <div class="post-title">WHICH SHOE DOMINATED BERLIN 2024?</div>
+      <div class="post-body">We broke down every finisher in the top 100 to find out which carbon plate ruled the fastest marathon course on earth.</div>
+      <div class="post-date">March 2025</div>
     </div>
-    <div class="filter-tags">
-      <span class="tag active" data-carbon="">All</span>
-      <span class="tag" data-carbon="yes">Carbon Plate</span>
-      <span class="tag" data-carbon="no">No Carbon</span>
+    <div class="post">
+      <div class="post-cat">Running · Guide</div>
+      <div class="post-title">CARBON VS NO CARBON: WHAT THE DATA SAYS</div>
+      <div class="post-body">Five years of Majors data reveals a clear answer — but it's not as simple as you think.</div>
+      <div class="post-date">February 2025</div>
     </div>
-  </div>
-
-  <div class="results-count" id="resultsCount"></div>
-  <div id="shoesGrid" class="shoes-grid">
-    <div class="loading"><span class="loading-dot">●</span> Loading shoe data...</div>
-  </div>
-</section>
-
-<section class="section" id="blog" style="background:var(--bg2);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border)">
-  <div class="section-header">
-    <div class="section-title">FROM THE BLOG</div>
-    <div class="section-link">All Posts →</div>
-  </div>
-  <div class="blog-grid">
-    <div class="blog-card">
-      <div class="blog-tag">Analysis</div>
-      <div class="blog-title">WHICH SHOE DOMINATED BERLIN 2024?</div>
-      <div class="blog-excerpt">We broke down every finisher in the top 100 to find out which carbon plate ruled the fastest marathon course on earth.</div>
-      <div class="blog-date">March 2025</div>
-    </div>
-    <div class="blog-card">
-      <div class="blog-tag">Guide</div>
-      <div class="blog-title">CARBON VS NO CARBON: WHAT THE DATA SAYS</div>
-      <div class="blog-excerpt">Five years of Majors data reveals a clear answer — but it's not as simple as you think. Drop and weight matter just as much.</div>
-      <div class="blog-date">February 2025</div>
-    </div>
-    <div class="blog-card">
-      <div class="blog-tag">Comparison</div>
-      <div class="blog-title">ALPHAFLY 3 VS ADIOS PRO EVO 1: THE VERDICT</div>
-      <div class="blog-excerpt">The two most-worn shoes at the 2024 Majors go head to head. We compare drop, weight and podium appearances.</div>
-      <div class="blog-date">January 2025</div>
+    <div class="post">
+      <div class="post-cat">Running · Comparison</div>
+      <div class="post-title">ALPHAFLY 3 VS ADIOS PRO EVO 1</div>
+      <div class="post-body">The two most-worn shoes at the 2024 Majors go head to head. Drop, weight and podium appearances.</div>
+      <div class="post-date">January 2025</div>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="footer-logo">RELVNT.CC</div>
-  <div class="footer-note">Data sourced from Abbott World Marathon Majors results · Affiliate links may earn commission</div>
+  <div class="footer-note">Data sourced from race results · Affiliate links may earn commission</div>
 </footer>
 
 <script>
-const SHEET_ID = '1M0FH57biV3rK2mmKLsuYRAgItBPJMyOYYoTQ3ROQscY';
-const SHEET_NAME = 'Shoe Database 2024';
-const API_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`;
-
-let allShoes = [];
-let activeCarbonFilter = '';
-
-async function loadShoes() {
-  try {
-    const res = await fetch(API_URL);
-    const text = await res.text();
-    const json = JSON.parse(text.substring(47).slice(0, -2));
-    const rows = json.table.rows;
-    const cols = json.table.cols.map(c => c.label);
-
-    allShoes = rows.map(row => {
-      const obj = {};
-      cols.forEach((col, i) => {
-        obj[col] = row.c[i] ? (row.c[i].v !== null ? row.c[i].v : '') : '';
-      });
-      return obj;
-    }).filter(s => s.brand);
-
-    populateBrandFilter();
-    updateStats();
-    applyFilters();
-  } catch(e) {
-    document.getElementById('shoesGrid').innerHTML = `<div class="no-results">Could not load shoe data. Make sure the Google Sheet is set to "Anyone with the link can view".</div>`;
-  }
+function toggleTheme(){
+  const html=document.documentElement;
+  const dark=html.getAttribute('data-theme')==='dark';
+  html.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('themeBtn').textContent=dark?'Dark mode':'Light mode';
+  localStorage.setItem('relvnt-theme',dark?'light':'dark');
 }
-
-function populateBrandFilter() {
-  const brands = [...new Set(allShoes.map(s => s.brand))].sort();
-  const sel = document.getElementById('filterBrand');
-  brands.forEach(b => {
-    const opt = document.createElement('option');
-    opt.value = b;
-    opt.textContent = b;
-    sel.appendChild(opt);
-  });
-}
-
-function updateStats() {
-  document.getElementById('statShoes').textContent = allShoes.length;
-  const brands = new Set(allShoes.map(s => s.brand));
-  document.getElementById('statBrands').textContent = brands.size;
-}
-
-function applyFilters() {
-  const race = document.getElementById('filterRace').value;
-  const year = document.getElementById('filterYear').value;
-  const brand = document.getElementById('filterBrand').value;
-  const gender = document.getElementById('filterGender').value;
-  const drop = document.getElementById('filterDrop').value;
-
-  let filtered = allShoes.filter(s => {
-    if (race && s.race !== race) return false;
-    if (year && String(s.year) !== String(year)) return false;
-    if (brand && s.brand !== brand) return false;
-    if (gender && s.gender !== gender) return false;
-    if (activeCarbonFilter && s.carbon !== activeCarbonFilter) return false;
-    if (drop) {
-      const d = parseFloat(s.drop_mm);
-      if (drop === 'low' && d > 4) return false;
-      if (drop === 'mid' && (d < 5 || d > 7)) return false;
-      if (drop === 'high' && d < 8) return false;
-    }
-    return true;
-  });
-
-  const count = document.getElementById('resultsCount');
-  count.innerHTML = `Showing <span>${filtered.length}</span> of <span>${allShoes.length}</span> shoes`;
-
-  renderShoes(filtered);
-}
-
-function renderShoes(shoes) {
-  const grid = document.getElementById('shoesGrid');
-  if (!shoes.length) {
-    grid.innerHTML = '<div class="no-results">No shoes match your filters. Try adjusting your selection.</div>';
-    return;
-  }
-
-  grid.innerHTML = shoes.map(s => {
-    const initials = (s.brand || '').split(' ').map(w => w[0]).join('').substring(0,3).toUpperCase();
-    const rankLabel = s.rank == 1 ? '🥇' : s.rank == 2 ? '🥈' : s.rank == 3 ? '🥉' : `#${s.rank}`;
-    const genderLabel = s.gender === 'M' ? 'Men' : s.gender === 'W' ? 'Women' : '';
-    const badgeText = `${s.race} ${s.year} · ${rankLabel}`;
-    const carbonTag = s.carbon === 'yes' ? '<span class="shoe-tag carbon">Carbon</span>' : '<span class="shoe-tag">No Carbon</span>';
-    const dropTag = s.drop_mm ? `<span class="shoe-tag">${s.drop_mm}mm drop</span>` : '';
-    const weightTag = s.weight_g ? `<span class="shoe-tag">${s.weight_g}g</span>` : '';
-    const cushionTag = s.cushion ? `<span class="shoe-tag">${s.cushion} cushion</span>` : '';
-    const buyBtn = s.affiliate_url
-      ? `<a href="${s.affiliate_url}" target="_blank" rel="noopener"><button class="shoe-buy">Check Price →</button></a>`
-      : `<button class="shoe-buy" style="opacity:0.4;cursor:default">Coming Soon</button>`;
-    const notesText = s.notes ? `<div class="shoe-rank">${s.notes}</div>` : `<div class="shoe-rank">${s.race} ${s.year} Podium</div>`;
-
-    return `
-    <div class="shoe-card">
-      <div class="shoe-img-wrap">
-        <div class="shoe-img-fallback">${initials}</div>
-        <div class="shoe-race-badge">${badgeText}</div>
-        ${genderLabel ? `<div class="gender-badge">${genderLabel}</div>` : ''}
-      </div>
-      <div class="shoe-body">
-        <div class="shoe-brand">${s.brand}</div>
-        <div class="shoe-name">${s.model}</div>
-        <div class="shoe-tags">${carbonTag}${dropTag}${weightTag}${cushionTag}</div>
-        <div class="shoe-meta">${notesText}${buyBtn}</div>
-      </div>
-    </div>`;
-  }).join('');
-}
-
-function resetFilters() {
-  document.getElementById('filterRace').value = '';
-  document.getElementById('filterYear').value = '';
-  document.getElementById('filterBrand').value = '';
-  document.getElementById('filterGender').value = '';
-  document.getElementById('filterDrop').value = '';
-  activeCarbonFilter = '';
-  document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
-  document.querySelector('.tag[data-carbon=""]').classList.add('active');
-  applyFilters();
-}
-
-document.querySelectorAll('.tag').forEach(t => {
-  t.addEventListener('click', function() {
-    document.querySelectorAll('.tag').forEach(x => x.classList.remove('active'));
-    this.classList.add('active');
-    activeCarbonFilter = this.dataset.carbon;
-    applyFilters();
-  });
-});
-
-function toggleTheme() {
-  const html = document.documentElement;
-  const isDark = html.getAttribute('data-theme') === 'dark';
-  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-  document.getElementById('themeIcon').textContent = isDark ? '🌙' : '☀️';
-  document.getElementById('themeLabel').textContent = isDark ? 'Dark' : 'Light';
-  localStorage.setItem('relvnt-theme', isDark ? 'light' : 'dark');
-}
-
-const saved = localStorage.getItem('relvnt-theme');
-if (saved) {
-  document.documentElement.setAttribute('data-theme', saved);
-  if (saved === 'dark') {
-    document.getElementById('themeIcon').textContent = '☀️';
-    document.getElementById('themeLabel').textContent = 'Light';
-  }
-}
-
-loadShoes();
+const t=localStorage.getItem('relvnt-theme');
+if(t){document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.getElementById('themeBtn').textContent='Light mode';}
 </script>
 </body>
 </html>
