@@ -257,15 +257,17 @@ function applyFilters() {
   const cushioning     = document.getElementById('filterCushioning').value;
   const responsiveness = document.getElementById('filterResponsiveness').value;
 
+  const match = (a, b) => a.toLowerCase().trim() === b.toLowerCase().trim();
+
   let filtered = allShoes.filter(s => {
-    if (race           && s.race           !== race)           return false;
-    if (year           && s.year           !== year)           return false;
-    if (brand          && s.brand          !== brand)          return false;
-    if (gender         && s.gender         !== gender)         return false;
-    if (pronation      && s.pronation      !== pronation)      return false;
-    if (support        && s.support        !== support)        return false;
-    if (cushioning     && s.cushioning     !== cushioning)     return false;
-    if (responsiveness && s.responsiveness !== responsiveness) return false;
+    if (race           && !match(s.race           || '', race))           return false;
+    if (year           && !match(s.year           || '', year))           return false;
+    if (brand          && !match(s.brand          || '', brand))          return false;
+    if (gender         && !match(s.gender         || '', gender))         return false;
+    if (pronation      && !match(s.pronation      || '', pronation))      return false;
+    if (support        && !match(s.support        || '', support))        return false;
+    if (cushioning     && !match(s.cushioning     || '', cushioning))     return false;
+    if (responsiveness && !match(s.responsiveness || '', responsiveness)) return false;
 
     return true;
   });
