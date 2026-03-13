@@ -4,7 +4,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230a0a0a'/><text x='50' y='72' font-family='Arial Black,sans-serif' font-size='52' font-weight='900' fill='%23c8f542' text-anchor='middle' letter-spacing='-6'>RLV</text></svg>">
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Relvnt  Gear That Wins</title>
+<title>Relvnt  -  Gear That Wins</title>
 <meta name="description" content="Every shoe worn on the podium at the world's biggest marathons. Filter by race, brand, drop and carbon plate.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -91,7 +91,7 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
   <div class="nav-links">
 
     <div class="nav-item">
-      <span>Sports<svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"/></svg></span>
+      <span>Sports<svg viewBox="0 0 10 6" style="width:9px;height:9px;min-width:9px;flex-shrink:0"><polyline points="1,1 5,5 9,1"/></svg></span>
       <div class="dropdown">
         <div class="dropdown-section">
           <div class="dropdown-label">Running</div>
@@ -109,7 +109,7 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
     </div>
 
     <div class="nav-item">
-      <span>Accessories<svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"/></svg></span>
+      <span>Accessories<svg viewBox="0 0 10 6" style="width:9px;height:9px;min-width:9px;flex-shrink:0"><polyline points="1,1 5,5 9,1"/></svg></span>
       <div class="dropdown">
         <a href="coming-soon.html">Watches</a>
         <a href="coming-soon.html">HR Monitoring</a>
@@ -127,7 +127,7 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
     <h1 class="page-title">RUNNING<br>SHOES</h1>
     <div class="results-count" id="resultsCount">Loading...</div>
   </div>
-  <p class="page-sub">Podium footwear from the world's biggest endurance races  filtered and ranked by race data.</p>
+  <p class="page-sub">Podium footwear from the world's biggest endurance races  -  filtered and ranked by race data.</p>
 </div>
 
 <div class="filters">
@@ -182,7 +182,7 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
       <option value="Medium">Medium</option>
       <option value="High">High</option>
     </select>
-    <span class="tooltip-icon">i<span class="tooltip-box">Structural support  relates to runner body weight</span></span>
+    <span class="tooltip-icon">i<span class="tooltip-box">Structural support  -  relates to runner body weight</span></span>
   </div>
 
   <div class="tooltip-wrap">
@@ -202,7 +202,7 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
       <option value="Medium">Medium</option>
       <option value="High">High</option>
     </select>
-    <span class="tooltip-icon">i<span class="tooltip-box">Energy return  how much bounce per stride</span></span>
+    <span class="tooltip-icon">i<span class="tooltip-box">Energy return  -  how much bounce per stride</span></span>
   </div>
 
   <div class="filter-sep"></div>
@@ -342,9 +342,9 @@ function renderCards(shoes) {
 
   grid.innerHTML = shoes.map(s => {
     const initials  = getInitials(s.brand, s.model);
-    const drop      = s.drop_mm  ? `${s.drop_mm}mm` : '';
-    const weight    = s.weight_g ? `${s.weight_g}g`  : '';
-    const rank      = s.rank || '';
+    const drop      = s.drop_mm  ? `${s.drop_mm}mm` : ' - ';
+    const weight    = s.weight_g ? `${s.weight_g}g`  : ' - ';
+    const rank      = s.rank || ' - ';
     const rc        = rankClass(parseInt(s.rank));
     const yearBadge = s.year ? `<span class="badge badge-year">${s.year}</span>` : '';
     const ctaBtn = s.affiliate_url
