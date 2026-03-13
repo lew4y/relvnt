@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230a0a0a'/><text x='50' y='72' font-family='Arial Black,sans-serif' font-size='52' font-weight='900' fill='%23c8f542' text-anchor='middle' letter-spacing='-6'>RLV</text></svg>">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relvnt — Gear That Wins</title>
+<meta name="description" content="Wondering when to replace your running shoes? Learn the key signs it's time for a new pair, plus how many kilometers you can expect from most running shoes.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f7f5f2;--card:#ffffff;--border:rgba(0,0,0,0.08);--text:#0a0a0a;--muted:#888884;--faint:#c4c2bc;--accent:#c8f542;--nav-bg:rgba(247,245,242,0.95)}
+[data-theme="dark"]{--bg:#0c0c0c;--card:#151515;--border:rgba(255,255,255,0.07);--text:#f0ede8;--muted:#a8a69f;--faint:#888580;--nav-bg:rgba(12,12,12,0.95)}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;transition:background .3s,color .3s;line-height:1.7}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:1.4rem 4rem}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:-.06em;color:var(--text);text-decoration:none}
+[data-theme="dark"] .logo{color:var(--accent)}
+.nav-links{display:flex;gap:0;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);align-items:center}
+.nav-item{position:relative}
+.nav-item>a,.nav-item>span{color:var(--muted);text-decoration:none;padding:.4rem 1.2rem;display:flex;align-items:center;gap:.35rem;cursor:pointer;white-space:nowrap}
+.nav-item>a:hover,.nav-item>span:hover{color:var(--text)}
+.nav-item>span svg,.nav-item>a svg{width:9px;height:9px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;transition:transform .15s}
+.nav-item:hover>span svg{transform:rotate(180deg)}
+.dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:var(--card);border:0.5px solid var(--border);border-radius:6px;min-width:160px;padding:.4rem 0;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+[data-theme="dark"] .dropdown{box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.nav-item:hover .dropdown{display:block}
+.dropdown a{display:block;padding:.5rem 1.1rem;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;white-space:nowrap}
+.dropdown a:hover{color:var(--text);background:var(--bg)}
+.dropdown-section{padding:.3rem 0;border-top:0.5px solid var(--border);margin-top:.3rem}
+.dropdown-section:first-child{border-top:none;margin-top:0}
+.dropdown-label{padding:.4rem 1.1rem .2rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.nav-blog{color:var(--muted);text-decoration:none;padding:.4rem 1.2rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+.nav-blog:hover{color:var(--text)}
+.theme-btn{background:none;border:0.5px solid var(--border);border-radius:20px;padding:.28rem .85rem;font-size:.72rem;color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.05em;margin-left:1.5rem}
+.theme-btn:hover{color:var(--text)}
+.page-outer{max-width:1060px;margin:0 auto;padding:4rem 2rem 6rem;display:grid;grid-template-columns:1fr 200px;gap:5rem;align-items:start}
+.article-wrap{min-width:0}
+.sidebar{position:sticky;top:90px}
+.sidebar-label{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:1rem}
+.sidebar-posts{display:flex;flex-direction:column;gap:0}
+.sidebar-post{display:block;padding:.7rem 0;border-top:0.5px solid var(--border);cursor:pointer}
+.sidebar-post:last-child{border-bottom:0.5px solid var(--border)}
+.sidebar-post-cat{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:.25rem}
+.sidebar-post-title{font-size:.78rem;color:var(--muted);line-height:1.4}
+.sidebar-post:hover .sidebar-post-title{color:var(--text)}
+.sidebar-post.active .sidebar-post-title{color:var(--text);font-weight:500}
+.sidebar-post.active{pointer-events:none}
+.back{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:inline-flex;align-items:center;gap:.4rem;margin-bottom:2.5rem}
+.back:hover{color:var(--text)}
+.article-meta{display:flex;gap:1rem;align-items:center;margin-bottom:1.5rem}
+.article-cat{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;background:var(--accent);color:#0a0a0a;padding:.2rem .55rem;border-radius:2px;font-weight:500}
+.article-date{font-size:.72rem;color:var(--faint);letter-spacing:.06em}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);line-height:.95;letter-spacing:.02em;margin-bottom:1.5rem}
+.article-intro{font-size:1.05rem;color:var(--muted);line-height:1.85;margin-bottom:3rem;padding-bottom:2.5rem;border-bottom:0.5px solid var(--border)}
+h2{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.03em;margin:2.5rem 0 1rem;color:var(--text)}
+h3{font-size:1rem;font-weight:500;letter-spacing:.03em;margin:1.8rem 0 .7rem;color:var(--text)}
+p{font-size:.93rem;color:var(--muted);margin-bottom:1.1rem;line-height:1.85}
+ul,ol{margin:0 0 1.2rem 1.2rem}
+li{font-size:.93rem;color:var(--muted);line-height:1.8;margin-bottom:.3rem}
+strong{font-weight:500;color:var(--text)}
+.cta-block{background:var(--card);border:0.5px solid var(--border);border-left:3px solid var(--accent);border-radius:4px;padding:1.5rem 1.8rem;margin:2.5rem 0}
+.cta-block p{margin-bottom:.6rem}
+.cta-block a{color:var(--text);font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.cta-block .cta-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.04em;color:var(--text);margin-bottom:.8rem}
+.rule{height:0.5px;background:var(--border);margin:2.5rem 0}
+footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.1em;color:var(--text)}
+[data-theme="dark"] .footer-logo{color:var(--accent)}
+.footer-note{font-size:.67rem;color:var(--faint)}
+@media(max-width:800px){nav,footer{padding:1rem 1.5rem}.nav-links{display:none}.page-outer{grid-template-columns:1fr;gap:3rem;padding:2.5rem 1.5rem 4rem}.sidebar{position:static}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">RELVNT</a>
+  <div class="nav-links">
+    <div class="nav-item">
+      <span>Sports<svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"/></svg></span>
+      <div class="dropdown">
+        <div class="dropdown-section">
+          <div class="dropdown-label">Running</div>
+          <a href="running-road.html">Road Shoes</a>
+          <a href="running-trail.html">Trail Shoes</a>
+          <a href="running-nonpro.html">Non-Professional</a>
+        </div>
+        <div class="dropdown-section">
+          <div class="dropdown-label">Cycling</div>
+          <a href="coming-soon.html">Bikes</a>
+          <a href="coming-soon.html">Shoes</a>
+          <a href="coming-soon.html">Helmets</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <span>Accessories<svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"/></svg></span>
+      <div class="dropdown">
+        <a href="coming-soon.html">Watches</a>
+        <a href="coming-soon.html">HR Monitoring</a>
+      </div>
+    </div>
+    <a class="nav-blog" href="blog.html">Blog</a>
+  </div>
+  <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">Dark mode</button>
+</nav>
+
+<div class="page-outer">
+<div class="article-wrap">
+  <a href="blog.html" class="back">← Back to blog</a>
+
+  <div class="article-meta">
+    <span class="article-cat">Running · Guide</span>
+    <span class="article-date">March 2026</span>
+  </div>
+
+  <h1>How Often Should You Replace Your Running Shoes?</h1>
+
+  <p class="article-intro">Runners talk a lot about shoes, but not nearly enough about when to retire them. Keep a pair going too long and you're more likely to feel aches, pains, and potential overuse injuries. This guide explains how often you should replace your running shoes, what signs to look for, and how to stretch their life without compromising comfort.</p>
+
+  <h2>Typical lifespan of running shoes</h2>
+  <p>Most running shoes don't have an exact expiry date, but there is a useful mileage range to keep in mind.</p>
+  <ul>
+    <li>For most runners, shoes last roughly <strong>600–800 km</strong> (about 370–500 miles).</li>
+    <li>Lighter runners or those with efficient technique may get closer to the upper end.</li>
+    <li>Heavier runners or those with a more forceful stride may feel the cushioning fade earlier.</li>
+  </ul>
+  <p>Think of that range as a guideline, not a strict rule. The real answer depends on how you run, the surface you use, and the specific model. If you're still looking for your first pair, see our picks for <a href="best-running-shoes-beginners-2026.html" style="color:var(--text);text-decoration:underline;text-underline-offset:3px">best running shoes for beginners</a>.</p>
+
+  <div class="rule"></div>
+
+  <h2>Key signs your running shoes need replacing</h2>
+  <p>Instead of counting kilometers alone, look for these practical signs.</p>
+
+  <h3>1. Flattened or "dead" cushioning</h3>
+  <ul>
+    <li>The midsole feels hard or "slappy" instead of soft and springy.</li>
+    <li>Your legs feel more beaten up after runs even if volume and pace haven't changed.</li>
+    <li>You notice more muscle soreness or joint discomfort than usual.</li>
+  </ul>
+  <p>When the foam loses its rebound, your body ends up absorbing more impact with every step.</p>
+
+  <h3>2. Visible wear on the outsole</h3>
+  <p>Flip the shoe over and check:</p>
+  <ul>
+    <li>Heavy wear on the forefoot or heel with smooth, bald patches.</li>
+    <li>Uneven wear on one side, which can affect your gait.</li>
+    <li>Deep lugs on trail shoes worn down to stubs.</li>
+  </ul>
+  <p>If the outsole is very worn but the cushioning still feels okay, it's still worth replacing — grip and stability matter too.</p>
+
+  <h3>3. Upper stretched or torn</h3>
+  <ul>
+    <li>Noticeable stretching where your big toe presses up.</li>
+    <li>Tears along flex points or around the lace eyelets.</li>
+    <li>Heel cup padding worn down, causing slipping or blisters.</li>
+  </ul>
+  <p>A tired upper means your foot moves more inside the shoe, which leads to friction and instability.</p>
+
+  <div class="rule"></div>
+
+  <h2>How your body tells you it's time</h2>
+  <p>Your body often gives you an early warning before the shoe looks worn out:</p>
+  <ul>
+    <li>New aches in knees, shins, or hips without a change in training load.</li>
+    <li>Plantar fascia or Achilles feeling more irritated after runs.</li>
+    <li>Feeling more impact through your joints, especially on harder surfaces.</li>
+  </ul>
+  <p>If everything else in your training is similar but discomfort is growing, consider that your shoes might be the culprit. This is one of the <a href="best-running-shoes-beginners-2026.html#mistakes" style="color:var(--text);text-decoration:underline;text-underline-offset:3px">common mistakes beginners should avoid</a> — wearing shoes well past their useful life.</p>
+
+  <div class="rule"></div>
+
+  <h2>How to track mileage on your shoes</h2>
+  <p>You don't need to obsess, but rough tracking helps enormously over time.</p>
+  <ul>
+    <li><strong>Use your running app</strong> — most apps let you assign a pair of shoes and track total mileage automatically.</li>
+    <li><strong>Keep it simple</strong> — jot down starting mileage and date in a notes app or on the shoebox.</li>
+    <li><strong>Rotate pairs separately</strong> — if you run in more than one shoe, track each independently.</li>
+  </ul>
+  <p>Even running just a couple of times per week, it's surprisingly easy to hit 600 km over the course of a year.</p>
+
+  <div class="rule"></div>
+
+  <h2>Can you extend the life of your shoes?</h2>
+  <p>You can't stop foam from aging, but you can avoid unnecessary damage:</p>
+  <ul>
+    <li><strong>Rotate pairs</strong> — alternating between two pairs lets the foam decompress between runs.</li>
+    <li><strong>Use them only for running</strong> — avoid wearing your running shoes as all-day casual shoes.</li>
+    <li><strong>Let them dry properly</strong> — avoid heaters; remove insoles and dry at room temperature.</li>
+    <li><strong>Clean gently</strong> — knock off dried mud and use mild soap and water when needed.</li>
+  </ul>
+  <p>These habits won't double the lifespan, but they can help you get closer to the higher end of the normal range.</p>
+
+  <div class="rule"></div>
+
+  <h2>When to replace shoes earlier than "recommended"</h2>
+  <p>Sometimes you shouldn't wait for a specific kilometer number:</p>
+  <ul>
+    <li>If you significantly change your running style or intensity — for example, starting speedwork or longer long runs.</li>
+    <li>If you're prone to injuries and want the reassurance of fresher cushioning.</li>
+    <li>If the shoe never felt quite right and you're starting to dread every run in them.</li>
+  </ul>
+  <p>Your comfort and enjoyment matter more than squeezing out every last kilometer.</p>
+
+  <div class="rule"></div>
+
+  <h2>Conclusion</h2>
+  <p>As a rough rule, most running shoes are ready for retirement somewhere between 600–800 km, but your own experience and the shoe's condition matter more than the exact number. Pay attention to comfort, visible wear, and how your body feels. When in doubt, it's safer to replace a bit early than to push a worn-out pair too far.</p>
+
+  <div class="cta-block">
+    <div class="cta-title">Time for a new pair?</div>
+    <p>Check out our picks for the <a href="best-running-shoes-beginners-2026.html">best running shoes for beginners in 2026</a> — all chosen with comfort and durability in mind.</p>
+    <p>→ <a href="best-running-shoes-beginners-2026.html">See best beginner running shoes</a></p>
+  </div>
+
+</div>
+
+<div class="sidebar">
+  <div class="sidebar-label">More articles</div>
+  <div class="sidebar-posts">
+    <a class="sidebar-post active" href="when-to-replace-running-shoes.html">
+      <div class="sidebar-post-cat">Running</div>
+      <div class="sidebar-post-title">How Often Should You Replace Running Shoes?</div>
+    </a>
+    <a class="sidebar-post" href="best-running-shoes-beginners-2026.html">
+      <div class="sidebar-post-cat">Running</div>
+      <div class="sidebar-post-title">Best Running Shoes for Beginners 2026</div>
+    </a>
+    <a class="sidebar-post" href="5k-running-plan-gps-watch.html">
+      <div class="sidebar-post-cat">Running · Training</div>
+      <div class="sidebar-post-title">Beginner's 5K Plan with a GPS Watch</div>
+    </a>
+    <a class="sidebar-post" href="how-to-choose-first-road-bike.html">
+      <div class="sidebar-post-cat">Cycling</div>
+      <div class="sidebar-post-title">How to Choose Your First Road Bike</div>
+    </a>
+    <a class="sidebar-post" href="road-bike-size-guide.html">
+      <div class="sidebar-post-cat">Cycling · Guide</div>
+      <div class="sidebar-post-title">Road Bike Size Guide: Find the Right Frame</div>
+    </a>
+    <a class="sidebar-post" href="road-vs-gravel-vs-hybrid-bikes.html">
+      <div class="sidebar-post-cat">Cycling · Guide</div>
+      <div class="sidebar-post-title">Road vs Gravel vs Hybrid Bikes</div>
+    </a>
+    <a class="sidebar-post" href="gps-running-watches-2026.html">
+      <div class="sidebar-post-cat">Watches</div>
+      <div class="sidebar-post-title">GPS Running Watches: Features That Matter</div>
+    </a>
+  </div>
+</div>
+</div>
+
+<footer>
+  <div class="footer-logo">RELVNT.CC</div>
+  <div class="footer-note">Data sourced from race results · Affiliate links may earn commission</div>
+</footer>
+
+<script>
+function toggleTheme(){const h=document.documentElement;const d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');document.getElementById('themeBtn').textContent=d?'Dark mode':'Light mode';localStorage.setItem('theme',d?'light':'dark')}
+(function(){const t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);const b=document.getElementById('themeBtn');if(b)b.textContent=t==='dark'?'Light mode':'Dark mode'})();
+</script>
+</body>
+</html>
