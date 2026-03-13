@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230a0a0a'/><text x='50' y='72' font-family='Arial Black,sans-serif' font-size='52' font-weight='900' fill='%23c8f542' text-anchor='middle' letter-spacing='-6'>RLV</text></svg>">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relvnt — Gear That Wins</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f7f5f2;--card:#ffffff;--border:rgba(0,0,0,0.08);--text:#0a0a0a;--muted:#888884;--faint:#c4c2bc;--accent:#c8f542;--nav-bg:rgba(247,245,242,0.95)}
+[data-theme="dark"]{--bg:#0c0c0c;--card:#151515;--border:rgba(255,255,255,0.07);--text:#f0ede8;--muted:#a8a69f;--faint:#888580;--nav-bg:rgba(12,12,12,0.95)}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;transition:background .3s,color .3s;min-height:100vh;display:flex;flex-direction:column}
+nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:1.4rem 4rem}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:-.06em;color:var(--text);text-decoration:none}
+[data-theme="dark"] .logo{color:var(--accent)}
+.nav-links{display:flex;gap:0;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);align-items:center}
+.nav-item{position:relative}
+.nav-item>a,.nav-item>span{color:var(--muted);text-decoration:none;padding:.4rem 1.2rem;display:flex;align-items:center;gap:.35rem;cursor:pointer;white-space:nowrap}
+.nav-item>a:hover,.nav-item>span:hover{color:var(--text)}
+.nav-item>span svg,.nav-item>a svg{width:9px;height:9px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;transition:transform .15s}
+.nav-item:hover>span svg{transform:rotate(180deg)}
+.dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:var(--card);border:0.5px solid var(--border);border-radius:6px;min-width:160px;padding:.4rem 0;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+[data-theme="dark"] .dropdown{box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.nav-item:hover .dropdown{display:block}
+.dropdown a{display:block;padding:.5rem 1.1rem;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;white-space:nowrap}
+.dropdown a:hover{color:var(--text);background:var(--bg)}
+.dropdown-section{padding:.3rem 0;border-top:0.5px solid var(--border);margin-top:.3rem}
+.dropdown-section:first-child{border-top:none;margin-top:0}
+.dropdown-label{padding:.4rem 1.1rem .2rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.nav-blog{color:var(--muted);text-decoration:none;padding:.4rem 1.2rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+.nav-blog:hover{color:var(--text)}
+.theme-btn{background:none;border:0.5px solid var(--border);border-radius:20px;padding:.28rem .85rem;font-size:.72rem;color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.05em;margin-left:1.5rem}
+.theme-btn:hover{color:var(--text)}
+.page-hero{padding:5rem 4rem 3rem;border-bottom:0.5px solid var(--border)}
+.page-kicker{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin-bottom:1rem}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,6vw,4.5rem);line-height:.95;letter-spacing:.01em;margin-bottom:1rem}
+.page-title mark{background:var(--accent);color:#0a0a0a;padding:0 .08em;font-style:normal}
+.page-sub{font-size:.9rem;color:var(--muted);line-height:1.85;max-width:520px}
+.soon-inner{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5rem 2rem;text-align:center}
+.soon-body{font-size:.92rem;color:var(--muted);line-height:1.9;max-width:400px;margin-bottom:2.5rem}
+.soon-back{display:inline-block;background:var(--text);color:var(--bg);padding:.75rem 2rem;font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;border-radius:2px;text-decoration:none;font-family:'DM Sans',sans-serif}
+footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.1em;color:var(--text)}
+[data-theme="dark"] .footer-logo{color:var(--accent)}
+.footer-note{font-size:.67rem;color:var(--faint)}
+@media(max-width:800px){nav,footer{padding:1rem 1.5rem}.nav-links{display:none}.page-hero{padding:3rem 1.5rem 2rem}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">RELVNT</a>
+  <div class="nav-links">
+    <div class="nav-item">
+      <span>Sports<svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"/></svg></span>
+      <div class="dropdown">
+        <div class="dropdown-section">
+          <div class="dropdown-label">Running</div>
+          <a href="running-road.html">Road Shoes</a>
+          <a href="running-trail.html">Trail Shoes</a>
+          <a href="running-nonpro.html">Non-Professional</a>
+        </div>
+        <div class="dropdown-section">
+          <div class="dropdown-label">Cycling</div>
+          <a href="coming-soon.html">Bikes</a>
+          <a href="coming-soon.html">Shoes</a>
+          <a href="coming-soon.html">Helmets</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <span>Accessories<svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"/></svg></span>
+      <div class="dropdown">
+        <a href="coming-soon.html">Watches</a>
+        <a href="coming-soon.html">HR Monitoring</a>
+      </div>
+    </div>
+    <a class="nav-blog" href="blog.html">Blog</a>
+  </div>
+  <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">Dark mode</button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-kicker">Running · Trail Shoes</div>
+  <div class="page-title">What wins on<br><mark>the trail.</mark></div>
+  <p class="page-sub">Podium gear from the world's most demanding trail and ultra races — UTMB, Western States, Hardrock 100 and more.</p>
+</div>
+
+<div class="soon-inner">
+  <p class="soon-body">We're building the trail racing database. Races covered will include UTMB, Western States 100, Hardrock 100, CCC, OCC and major ultra-trail events worldwide.</p>
+  <a class="soon-back" href="shoes.html">Browse all podium shoes →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">RELVNT.CC</div>
+  <div class="footer-note">Data sourced from race results · Affiliate links may earn commission</div>
+</footer>
+
+<script>
+function toggleTheme(){const h=document.documentElement;const d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');document.getElementById('themeBtn').textContent=d?'Dark mode':'Light mode';localStorage.setItem('theme',d?'light':'dark')}
+(function(){const t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);const b=document.getElementById('themeBtn');if(b)b.textContent=t==='dark'?'Light mode':'Dark mode'})();
+</script>
+</body>
+</html>
