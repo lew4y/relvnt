@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230a0a0a'/><text x='50' y='72' font-family='Arial Black,sans-serif' font-size='52' font-weight='900' fill='%23c8f542' text-anchor='middle' letter-spacing='-6'>RLV</text></svg>">
+  <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GPS Running Watches in 2026 – Features That Actually Matter - Relvnt</title>
+<title>Relvnt  -  Gear That Wins</title>
 <meta name="description" content="Overwhelmed by GPS running watch specs? Here's a clear guide to the features that really matter in 2026 and how to pick the right watch for your running.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -13,7 +14,7 @@
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;transition:background .3s,color .3s;line-height:1.7}
 a{color:inherit;text-decoration:none}
 nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:1.4rem 4rem}
-.logo{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:.1em;color:var(--text)}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:-.06em;color:var(--text)}
 [data-theme="dark"] .logo{color:var(--accent)}
 .nav-links{display:flex;gap:2.5rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .nav-links a:hover{color:var(--text);transition:color .15s}
@@ -56,15 +57,56 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
 .footer-note{font-size:.67rem;color:var(--faint)}
 @media(max-width:800px){nav,footer{padding:1rem 1.5rem}.nav-links{display:none}.page-outer{grid-template-columns:1fr;gap:3rem;padding:2.5rem 1.5rem 4rem}.sidebar{position:static}}
 </style>
+<style>
+.nav-item{position:relative}
+.nav-item>a,.nav-item>span{color:var(--muted);text-decoration:none;padding:.4rem 1.2rem .7rem;display:flex;align-items:center;gap:.35rem;cursor:pointer;white-space:nowrap}
+.nav-item>a:hover,.nav-item>span:hover{color:var(--text)}
+.nav-item>span svg,.nav-item>a svg{width:9px;height:9px;min-width:9px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;transition:transform .15s;display:inline-block}
+.nav-item:hover>span svg{transform:rotate(180deg)}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--card);border:0.5px solid var(--border);border-radius:6px;min-width:160px;padding:.4rem 0;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+[data-theme="dark"] .dropdown{box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.nav-item:hover .dropdown{display:block}
+.dropdown a{display:block;padding:.5rem 1.1rem;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;white-space:nowrap}
+.dropdown a:hover{color:var(--text);background:var(--bg)}
+.dropdown-section{padding:.3rem 0;border-top:0.5px solid var(--border);margin-top:.3rem}
+.dropdown-section:first-child{border-top:none;margin-top:0}
+.dropdown-label{padding:.4rem 1.1rem .2rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.nav-blog{color:var(--muted);text-decoration:none;padding:.4rem 1.2rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+.nav-blog:hover{color:var(--text)}
+</style>
 </head>
 <body>
 <nav>
-  <a href="../index.html" class="logo">RELVNT</a>
+  <a class="logo" href="index.html">RELVNT</a>
   <div class="nav-links">
-    <a href="../shoes.html">Running</a>
-    <a href="#">Cycling</a>
-    <a href="#">Watches</a>
-   <a href="../blog.html">Blog</a>
+
+    <div class="nav-item">
+      <span>Sports<svg viewBox="0 0 10 6" style="width:9px;height:9px;min-width:9px;flex-shrink:0"><polyline points="1,1 5,5 9,1"/></svg></span>
+      <div class="dropdown">
+        <div class="dropdown-section">
+          <div class="dropdown-label">Running</div>
+          <a href="running-road.html">Road Shoes</a>
+          <a href="running-trail.html">Trail Shoes</a>
+          <a href="running-nonpro.html">Non-Professional</a>
+        </div>
+        <div class="dropdown-section">
+          <div class="dropdown-label">Cycling</div>
+          <a href="coming-soon.html">Bikes</a>
+          <a href="coming-soon.html">Shoes</a>
+          <a href="coming-soon.html">Helmets</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <span>Accessories<svg viewBox="0 0 10 6" style="width:9px;height:9px;min-width:9px;flex-shrink:0"><polyline points="1,1 5,5 9,1"/></svg></span>
+      <div class="dropdown">
+        <a href="coming-soon.html">Watches</a>
+        <a href="coming-soon.html">HR Monitoring</a>
+      </div>
+    </div>
+
+    <a class="nav-blog" href="blog.html">Blog</a>
   </div>
   <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">Dark mode</button>
 </nav>
@@ -78,14 +120,14 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
     <span class="article-date">March 2026</span>
   </div>
 
-  <h1>GPS Running Watches in 2026 – Which Features Actually Matter?</h1>
+  <h1>GPS Running Watches in 2026 - Which Features Actually Matter?</h1>
 
   <p class="article-intro">GPS running watches are more packed with features than ever. That sounds great, until you're trying to choose one and you're staring at long spec sheets that all look the same. The good news: you probably don't need half of what's being advertised. This guide breaks down the features that actually matter, so you can pick a watch that fits how you run and what you care about.</p>
 
   <h2>Core features every runner should care about</h2>
 
   <h3>Accurate GPS tracking</h3>
-  <p>At the very least, your watch needs to track distance, pace / speed, and route. Modern watches are generally accurate enough for most runners. Higher-end models may offer multi-band GPS and support for multiple satellite systems (GNSS) to improve accuracy in tricky environments like dense cities or forests - nice if you train a lot in those conditions, but not mandatory for most beginners.</p>
+  <p>At the very least, your watch needs to track distance, pace / speed, and route. Modern watches are generally accurate enough for most runners. Higher-end models may offer multi-band GPS and support for multiple satellite systems (GNSS) to improve accuracy in tricky environments like dense cities or forests  -  nice if you train a lot in those conditions, but not mandatory for most beginners.</p>
 
   <h3>Heart rate monitoring</h3>
   <p>Heart rate data is one of the easiest ways to train smarter, not just harder. Wrist-based optical sensors are convenient and accurate enough for most people in everyday training. Chest straps still win for pure accuracy, especially for intervals or very fast changes in intensity.</p>
@@ -94,7 +136,7 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
   <h3>Battery life</h3>
   <p>Battery life is easy to overlook until you're constantly charging your watch. Two aspects matter:</p>
   <ul>
-    <li><strong>GPS battery life:</strong> how many hours of GPS tracking you get on a full charge - important for long runs, hikes, or races.</li>
+    <li><strong>GPS battery life:</strong> how many hours of GPS tracking you get on a full charge  -  important for long runs, hikes, or races.</li>
     <li><strong>Daily battery life:</strong> how long the watch lasts with smart features, notifications, and heart rate tracking on.</li>
   </ul>
   <p>For most runners, a watch that handles at least a week of typical use and several hours of GPS tracking per charge is about right.</p>
@@ -116,9 +158,9 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
     <div class="cta-title">Popular GPS watches with the right balance</div>
     <p>Want examples that blend core training features with just enough "smart" extras?</p>
     <ul>
-      <li><a href="#">Watch A – beginner-friendly, long battery</a></li>
-      <li><a href="#">Watch B – great for intermediate runners</a></li>
-      <li><a href="#">Watch C – navigation and trail-ready</a></li>
+      <li><a href="#">Watch A - beginner-friendly, long battery</a></li>
+      <li><a href="#">Watch B - great for intermediate runners</a></li>
+      <li><a href="#">Watch C - navigation and trail-ready</a></li>
     </ul>
     <p>→ <a href="#">Compare prices and specs for our favourite GPS running watches</a></p>
   </div>
@@ -128,10 +170,10 @@ footer{padding:2rem 4rem;border-top:0.5px solid var(--border);display:flex;justi
   <h2>Smartwatch vs pure sports watch</h2>
 
   <h3>Smartwatch-style running watches</h3>
-  <p>These behave more like general smartwatches - lots of apps and watch faces, strong focus on notifications and payments, sometimes shorter battery life under heavy use. Ideal if you also care about style and non-running features.</p>
+  <p>These behave more like general smartwatches  -  lots of apps and watch faces, strong focus on notifications and payments, sometimes shorter battery life under heavy use. Ideal if you also care about style and non-running features.</p>
 
   <h3>Sports-first running watches</h3>
-  <p>Built primarily around training - robust build, often with more physical buttons, battery and durability prioritized over flashy features, cleaner interfaces for workouts. If you mainly want a training tool and don't care about extra apps, a sports-first watch is usually the better choice.</p>
+  <p>Built primarily around training  -  robust build, often with more physical buttons, battery and durability prioritized over flashy features, cleaner interfaces for workouts. If you mainly want a training tool and don't care about extra apps, a sports-first watch is usually the better choice.</p>
 
   <div class="rule"></div>
 
